@@ -8,14 +8,14 @@ export default class SearchService {
     this.country = '';
   }
   async fetchApiEvent() {
-    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}`;
+    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&page=${this.page}&source=universe`;
     // &page=${this.page}
-    console.log(this);
+    // console.log(this);
     const response = await fetch(url);
     const data = await response.json();
     // console.log(data); //Нам приходит массив объектов из _embedded
     const { _embedded } = data;
-    console.log(_embedded.events);
+    // console.log(_embedded.events);
     return _embedded.events;
   }
   get query() {
@@ -33,5 +33,5 @@ export default class SearchService {
 }
 
 // Это надо будет перенести в файл js, где будет писать Ира функцию для инпута
-const searchService = new SearchService();
-searchService.fetchApiEvent();
+// const searchService = new SearchService();
+// searchService.fetchApiEvent();
