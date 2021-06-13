@@ -1,45 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modal</title>
-  </head>
-  <body>
-    <div class="modal">
-      <img
-        class="modal-img-second"
-        src="https://ibb.co/dQmz5rb"
-        alt="{{small images author}}"
-      />
-      <div class="modal-img"></div>
+<div class="modal is open">
+  <button class="modal-close">
+    <svg class="modal-svg" width="25" height="25"><use href=""></use></svg>
+  </button>
+  <div class="modal-data">
+    <img
+      class="modal-img-second"
+      src="https://www.theplace.ru/archive/black_eyed_peas/img/54733_celebrity_para.jpg"
+      alt="{{small images author}}"
+      width="132"
+      height="132"
+    />
+    <div class="modal-hero">
       <img
         class="modal-img-first"
-        src="https://ibb.co/b7BRqMV"
+        src="https://www.theplace.ru/archive/black_eyed_peas/img/54730_celebrity_para.jpg"
         alt="big images author"
+        width="360"
+        height="641"
       />
       <div class="modal-description">
         <h1 class="modal-title">INFO</h1>
         <p class="modal-text">
-          {{Atlas Weekend is the largest music festival in Ukraine.More than 200
-          artists will create a proper music festival atmosphere on 10 stages}}
+          {{Atlas Weekend is the largest music festival in Ukraine.More than 200 artists will create
+          a proper music festival atmosphere on 10 stages}}
         </p>
         <h2 class="modal-title">WHEN</h2>
-        <p class="modal-text">{{2021-06-09}}</p>
-        <p class="modal-text">{{20:00 (Kyiv/Ukraine)}}</p>
+        <p class="modal-text">
+          {{2021-06-09}} <br />
+          <span class="modal-text-first">{{20:00 (Kyiv/Ukraine)}}</span>
+        </p>
         <h2 class="modal-title">WHERE</h2>
         <p class="modal-text">{{Kyiv, Ukraine }}</p>
-        <p class="modal-text">{{VDNH}}</p>
+        <p class="modal-text"></p>
         <h2 class="modal-title">WHO</h2>
-        <p class="modal-text">{{The Black Eyed Peas}}</p>
+        <p class="modal-text">
+          {{The Black Eyed Peas}} <br />
+          <span class="modal-text-first">{{VDNH}}</span>
+        </p>
         <h2 class="modal-title">PRICES</h2>
         <p class="modal-text">Standart {{300-500}} UAH</p>
-        <button class="modal-btn-buy btn">BUY TICKETS</button>
+        <button class="modal-btn buy-standart">BUY TICKETS</button>
         <p class="modal-text">VIP {{1000-1500}} UAH</p>
-        <button class="modal-btn-buy btn">BUY TICKETS</button>
-        <button class="modal-btn-more btn">MORE FROM THIS AUTHOR</button>
+        <button class="modal-btn buy-vip">BUY TICKETS</button>
       </div>
     </div>
-  </body>
-</html>
+    <button class="modal-btn-more btn">MORE FROM THIS AUTHOR</button>
+  </div>
+</div>

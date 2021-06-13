@@ -1,1 +1,111 @@
-//for madal
+img {
+  display: block;
+  max-width: 100%;
+  //   height: auto;
+  object-fit: cover;
+}
+.modal {
+  margin: 0;
+  padding: 0;
+  padding: 62px 32px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 930px;
+  background-color: #fff2fd;
+  border-radius: 300px 0px;
+  background-blend-mode: color;
+  overflow-y: auto;
+}
+.modal-svg {
+  background: #4c00fe;
+}
+// .modal-data {
+// }
+.modal-hero {
+  margin-bottom: 45px;
+  max-height: 641px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.modal-description {
+  margin-left: 60px;
+  max-width: 450px;
+}
+.modal-title {
+  margin-bottom: 7px;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #dc56c5;
+  text-transform: uppercase;
+}
+.modal-text {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0e0e0e;
+}
+.modal-text-first {
+  margin-top: 5px;
+  display: block;
+}
+.modal-img-second {
+  margin-right: auto;
+  margin-bottom: 41px;
+  margin-left: auto;
+  object-fit: cover;
+  background: #c4c4c4;
+  border-radius: 50px 0px;
+}
+.modal-btn {
+  padding: 10px 19px;
+  min-width: 145px;
+  max-height: 40px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #4c00fe;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.buy-standart {
+  margin-bottom: 31px;
+}
+
+.modal-btn-more {
+  padding: 10px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #4c00fe;
+  border: 1px solid #4c00fe;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: uppercase;
+}
