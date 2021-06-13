@@ -1,0 +1,9 @@
+{{#each this}}
+  <li class='event-card'>
+    <img class='image' src={{images.2.url}} alt={{name}} data-source={{images.9.url}} width='180' />
+
+    <p class='title'>{{name}}</p>
+    <p class='date'>{{dates.start.localDate}}</p>
+    <p class='location'>{{_embedded.venues.0.name}}</p>
+  </li>
+{{/each}}
