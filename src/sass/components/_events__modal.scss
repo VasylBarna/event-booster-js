@@ -1,1 +1,143 @@
-//qwerty
+.backdrop {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/*!  мадалки НЕМАЄ  */
+.backdrop.is-hidden .events__modal {
+  transform: scale(2);
+  opacity: 0;
+  transition: transform 250ms $time-distribution-function, opacity 250ms $time-distribution-function;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// ========= modal==========
+
+.events__modal {
+  width: 1322px;
+  position: absolute;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 30px;
+  opacity: 1;
+  background-color: $modal-bg;
+  border-radius: 4px;
+
+  transform: scale(1);
+  transition: transform 250ms $time-distribution-function, opacity 250ms $time-distribution-function;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  background-color: $modal-bg;
+}
+
+.events__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.events__item {
+  transition: 250ms $time-distribution-function;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.events__item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.events__item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.events__box {
+  width: 400px;
+  padding: 10px;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  background-color: bisque;
+}
+.events__image {
+  width: 200px;
+  height: 300px;
+  background-color: $input-text-color;
+}
+
+.btn-modal-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    top: 7px;
+    left: 14px;
+    height: 14px;
+    width: 1px;
+
+    background: #000;
+    transition: 250ms $time-distribution-function;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after,
+  &:focus::before,
+  &:focus::after {
+    opacity: 0.3;
+  }
+}
+
+//  ====== info ======
+
+.info__list {
+}
+
+.info__item {
+}
+
+.info__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $accent-color;
+}
+
+.info__text {
+  font-size: 18px;
+  line-height: 1.21;
+}
