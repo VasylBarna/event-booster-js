@@ -5,6 +5,7 @@ img {
   object-fit: cover;
 }
 .modal {
+  margin: 0;
   padding-top: 75px;
   padding-right: 17px;
   padding-bottom: 104px;
@@ -183,25 +184,25 @@ img {
   }
 }
 .modal-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
+  // position: absolute;
+  // top: 8px;
+  // right: 8px;
+  // width: 17px;
+  // height: 17px;
   padding: 0;
+  margin-left: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  color: $primary-text-color;
+  color: $bg-btn-color;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
   outline: transparent;
+  border: none;
   transition: color 250ms $time-distribution-function;
   &:focus,
   &:hover {
-    color: $modal-secondary-color;
+    color: $accent-color;
   }
 }
 .modal-icon-close {
@@ -209,4 +210,13 @@ img {
   height: 17px;
   fill: currentColor;
   transition: color 250ms $time-distribution-function;
+}
+.icon-ticket {
+  width: 24px;
+  height: 16px;
+  margin-right: 13px;
+  @media screen and (min-width: 1280px) {
+    width: 29px;
+    height: 19px;
+  }
 }
