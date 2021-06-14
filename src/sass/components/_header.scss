@@ -1,12 +1,11 @@
 header {
-  
   background-color: rgba(11, 11, 11, 0.5);
   width: 100%;
 }
 
 .header__container {
-position: relative;
-overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
   width: 100%;
 
@@ -29,15 +28,13 @@ overflow: hidden;
 }
 
 .header-box {
+  padding-top: 78px;
 
-  padding-top: 80px;
-  
   width: 100%;
   height: 364px;
 
-  background-image: 
-  linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
-  url(../images/header-img/bg-mob/bg-mob-1x.jpg);
+  background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
+    url(../images/header-img/bg-mob/bg-mob-1x.jpg);
 
   background-size: 320px 364px;
   background-position: center;
@@ -45,13 +42,19 @@ overflow: hidden;
   background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
-    background-image: url(../images/header-img/bg-tab/bg-tab-1x.jpg);
+padding-top: 40px;
+
+    background-image: 
+    linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
+    url(../images/header-img/bg-tab/bg-tab-1x.jpg);
     background-size: 768px 364px;
   }
 
   @media screen and (min-width: 1280px) {
     height: 446px;
-    background-image: url(../images/header-img/bg-desc/bg-desc-1x.jpg);
+    background-image: 
+    linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
+    url(../images/header-img/bg-desc/bg-desc-1x.jpg);
     background-size: 1280px 446px;
   }
 }
@@ -81,41 +84,58 @@ overflow: hidden;
 
   @media screen and (min-width: 1280px) {
     font-size: 50px;
-line-height: 61px;
+    line-height: 61px;
 
-    width: 588px;
-height: 122px;
+    width: 650px;
+    height: 122px;
   }
   //outline: solid 2px red;
 }
 
 .logo-box {
-position: absolute;
-top: -90px;
-left: -107px;
+  position: absolute;
+  top: -90px;
+  left: -107px;
 
   width: 213px;
-height: 180px;
+  height: 180px;
 
+  background: linear-gradient(
+    136.07deg,
+    rgba(196, 196, 196, 0.03) 10.75%,
+    rgba(196, 196, 196, 0) 92.33%
+  );
+  backdrop-filter: blur(30px);
 
-cursor: pointer;
- background: linear-gradient(136.07deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
-backdrop-filter: blur(30px);
+  :hover {
+    transform: rotate(90deg);
+  }
+  :focus {
+    transform: rotate(90deg);
+  }
+  cursor: pointer;
+  border-radius: 50%;
 
-:hover {
- 
-  transform: rotate(90deg);
-};
-:focus {
-  transform: rotate(90deg);
-}
+  @media screen and (min-width: 768px) {
+ top: -151px;
+  left: -180px;
 
-border-radius: 50%;
-outline: solid 2px yellow;
+    width: 359px;
+  height: 302px;
+  }
+
+   @media screen and (min-width: 1280px) {
+ top: -201px;
+  left: -238px;
+
+    width: 477px;
+  height: 402px;
+  }
+ // outline: solid 2px yellow;
 }
 
 .logo-img {
- position: absolute;
- bottom: 0;
- right: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
