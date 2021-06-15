@@ -4,18 +4,18 @@ const KEY = 't9AQpoYkrEtRVSYxwnNseTc1nTuCbUhF';
 export default class SearchService {
   constructor() {
     this.searchQuery = '';
-    this.page = 1;
+    this.page = 0;
     this.country = '';
   }
   async fetchApiEvent() {
-    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&page=${this.page}&source=universe`;
+    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&page=${this.page}`;
     // &page=${this.page}
     // console.log(this);
     const response = await fetch(url);
     const data = await response.json();
     // console.log(data); //Нам приходит массив объектов из _embedded
     const { _embedded } = data;
-    // console.log(_embedded.events);
+    console.log(_embedded.events);
     return _embedded.events;
   }
   get query() {

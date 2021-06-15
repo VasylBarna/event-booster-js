@@ -1,9 +1,14 @@
 {{#each this}}
   <li class='event-card'>
-    <img class='image' src={{images.2.url}} alt={{name}} data-image={{images.9.url}} width='180' />
-
-    <p class='title'>{{name}}</p>
-    <p class='date'>{{dates.start.localDate}}</p>
-    <p class='location'>{{_embedded.venues.0.name}}</p>
+    <img class='card-image' src={{images.2.url}} alt={{name}} data-id={{id}} />
+    <div class='align'>
+      <p class='card-title'>{{name}}</p>
+      <p class='event-date'>{{dates.start.localDate}}</p>
+      {{#if _embedded.venues.0.name}}
+        <a class='event-location' href=''>{{_embedded.venues.0.name}}</a>
+      {{else}}
+        <a class='event-location' href=''>{{name}}</a>
+      {{/if}}
+    </div>
   </li>
 {{/each}}
