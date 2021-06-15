@@ -1,27 +1,23 @@
-export default (() => {
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-  };
+import { refs } from './refs';
 
-  refs.openModalBtn.addEventListener('click', onOpenModal);
-  refs.closeModalBtn.addEventListener('click', onCloseModal);
+export default (() => {
+  refs.eventsOpenModalBtn.addEventListener('click', onOpenModal);
+  refs.eventCloseModalBtn.addEventListener('click', onCloseModal);
 
   function onOpenModal() {
-    document.body.classList.add('modal-open');
-    refs.modal.classList.remove('is-hidden');
+    document.body.classList.add('events-modal-open');
+    refs.eventsModal.classList.remove('is-hidden-events');
 
     window.addEventListener('keydown', onKeydownClose);
-    refs.modal.addEventListener('click', onOverlay);
+    refs.eventsModal.addEventListener('click', onOverlay);
   }
 
   function onCloseModal() {
-    document.body.classList.remove('modal-open');
-    refs.modal.classList.add('is-hidden');
+    document.body.classList.remove('events-modal-open');
+    refs.eventsModal.classList.add('is-hidden-events');
 
     window.removeEventListener('keydown', onKeydownClose);
-    refs.modal.removeEventListener('click', onOverlay);
+    refs.eventsModal.removeEventListener('click', onOverlay);
   }
 
   function onKeydownClose(e) {
@@ -29,6 +25,6 @@ export default (() => {
   }
 
   function onOverlay(e) {
-    if (e.target === refs.modal) onCloseModal();
+    if (e.target === refs.eventsModal) onCloseModal();
   }
 })();
