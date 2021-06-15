@@ -8,7 +8,7 @@ export default class SearchService {
     this.country = '';
   }
   async fetchApiEvent() {
-    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&page=${this.page}`;
+    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&size=200&page=${this.page}`;
     // &page=${this.page}
     // console.log(this);
     const response = await fetch(url);
@@ -16,6 +16,9 @@ export default class SearchService {
     // console.log(data); //Нам приходит массив объектов из _embedded
     const { _embedded } = data;
     console.log(_embedded.events);
+    // const allEvents = _embedded.events;
+    // const totalPages = page.totalPages;
+
     return _embedded.events;
   }
   get query() {

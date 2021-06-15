@@ -8,7 +8,7 @@ import './js/pagination.js';
 
 const searchService = new SearchService();
 
-searchService
-  .fetchApiEvent()
-  .then(data => eventCardsTpl(data))
-  .then(markup => refs.cardsList.insertAdjacentHTML('beforeend', markup));
+// searchService
+//   .fetchApiEvent()
+//   .then(data => eventCardsTpl(data))
+//   .then(markup => refs.cardsList.insertAdjacentHTML('beforeend', markup));
