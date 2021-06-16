@@ -1,13 +1,15 @@
-// modal
 
-// .visually-hidden {
-//     position: absolute;
-//     width: 1px;
-//     height: 1px;
-//     margin: -1px;
-//     border: 0px;
-//     padding: 0px;
-//     clip: rect(0 0 0 0);
-//     overflow: hidden;
-//   }
+    const modalStudentsLink = document.querySelector('.footer-students');
+    const closeModalStudents = document.querySelector('.modal-close-footer');
+    const modalStudents = document.querySelector('.footer-modal');
+    const backdropFooterModal = document.querySelector('.backdrop-footer');
 
+  
+    modalStudentsLink.addEventListener('click', toggleModal);
+    closeModalStudents.addEventListener('click', toggleModal);
+  
+    function toggleModal(event) {
+    event.preventDefault();
+    modalStudents.classList.toggle('modal-open');
+backdropFooterModal.classList.toggle('is-hidden-footer');
+    }
