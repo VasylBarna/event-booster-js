@@ -15,11 +15,11 @@ export default class SearchService {
     const data = await response.json();
     // console.log(data); //Нам приходит массив объектов из _embedded
     const { _embedded } = data;
-    console.log(_embedded.events);
+    //console.log(_embedded.events);
     // const allEvents = _embedded.events;
     // const totalPages = page.totalPages;
 
-    return _embedded.events;
+    return _embedded ? _embedded.events: null;
   }
   get query() {
     return this.searchQuery;

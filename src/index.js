@@ -5,8 +5,9 @@ import './js/footer';
 import eventCardsTpl from './templates/eventCardsTpl.hbs';
 import SearchService from './js/api_service';
 import './js/pagination.js';
-
-const searchService = new SearchService();
+import './js/input.js';
+import templateMany from './templates/templateCountry.hbs';
+//const searchService = new SearchService();
 
 // searchService
 //   .fetchApiEvent()
