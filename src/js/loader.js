@@ -10,7 +10,7 @@ function onSiteOpen() {
     document.body.classList.toggle('loader-open');
     refs.loader.classList.toggle('is-hidden');
     refs.main.style.removeProperty('height');
-  }, 2300);
+  }, 2500);
 }
 
 // paginationContainer: document.querySelector('#pagination-container'),
