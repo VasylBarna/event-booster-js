@@ -2,35 +2,31 @@ import '@pnotify/core/dist/BrightTheme.css';
 import { notice, info, success, error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 
-function onFetchNotice() {
+function onFetchNotice(message) {
   notice({
-    title: "I'm a notice.",
-    delay: 2500,
-    styling: 'brighttheme',
+    text: `${message}`,
+    delay: 2000,
   });
 }
 
 function onFetchInfo() {
   info({
-    title: "I'm an info message.",
-    delay: 2500,
-    styling: 'brighttheme',
+    text: `${message}`,
+    delay: 2000,
   });
 }
 
 function onFetchSuccess() {
   success({
-    title: "I'm a success message.",
-    delay: 2500,
-    styling: 'brighttheme',
+    text: `${message}`,
+    delay: 2000,
   });
 }
 
 function onFetchError() {
   error({
-    title: "I'm an error message.",
-    delay: 2500,
-    styling: 'brighttheme',
+    text: `${message}`,
+    delay: 2000,
   });
 }
 
