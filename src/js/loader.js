@@ -3,7 +3,7 @@ import { refs } from './refs.js';
 onSiteOpen();
 
 function onSiteOpen() {
-  refs.main.style.height = '100vw';
+  refs.main.style.height = '100vh';
   document.body.classList.toggle('loader-open');
 
   setTimeout(() => {
