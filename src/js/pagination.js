@@ -5,11 +5,13 @@ import SearchService from './api_service.js';
 
 const fetchService = new SearchService();
 
-onFetchTake();
+fetchService.fetchApiEvent().then(data => paginationCreate(data));
 
-function onFetchTake() {
-  fetchService.fetchApiEvent().then(data => paginationCreate(data));
-}
+// onFetchTake();
+
+// function onFetchTake() {
+//   fetchService.fetchApiEvent().then(data => paginationCreate(data));
+// }
 
 // loadMorePages();
 // function loadMorePages() {
@@ -17,7 +19,7 @@ function onFetchTake() {
 //   onFetchTake();
 // }
 
-function paginationCreate(items) {
+export default function paginationCreate(items) {
   $('#pagination-container').pagination({
     pageSize: 12,
     showPrevious: false,
