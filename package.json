@@ -29,6 +29,8 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@pnotify/core": "^5.2.0",
     "lodash.debounce": "^4.0.8",
+    "notification": "0.0.6",
+    "pagination.js": "^0.1.1",
     "paginationjs": "^2.1.5"
   }
 }
