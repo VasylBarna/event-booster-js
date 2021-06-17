@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import eventsModalTpl from '../templates/events__modal.hbs';
 
 export default (() => {
   refs.eventsOpenModalBtn.addEventListener('click', onOpenModal);
@@ -28,3 +29,11 @@ export default (() => {
     if (e.target === refs.eventsModal) onCloseModal();
   }
 })();
+
+refs.buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
+
+function onBuyTicketsBtn() {
+  const whenValue = refs.dataModalWhere.textContent;
+
+  refs.eventsList.insertAdjacentHTML('beforeend', eventsModalTpl(whenValue));
+}
