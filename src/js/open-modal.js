@@ -5,19 +5,25 @@
     modal: document.querySelector('[data-modal]'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', onOpenModal);
+  refs.closeModalBtn.addEventListener('click', onCloseModal);
 
-  function toggleModal() {
-    document.body.classList.toggle('modal-open');
-    refs.modal.classList.toggle('is-hidden');
+  function onOpenModal() {
+    document.body.classList.add('modal-open');
+    refs.modal.classList.remove('is-hidden');
     window.addEventListener('keydown', onKeydownClose);
     refs.modal.addEventListener('click', onOverlay);
   }
+  function onCloseModal() {
+    document.body.classList.remove('modal-open');
+    refs.modal.classList.add('is-hidden');
+    window.removeEventListener('keydown', onKeydownClose);
+    refs.modal.removeEventListener('click', onOverlay);
+  }
   function onKeydownClose(e) {
-    if (e.code === 'Escape') toggleModal();
+    if (e.code === 'Escape') onCloseModal();
   }
   function onOverlay(e) {
-    if (e.target === refs.modal) toggleModal();
+    if (e.target === refs.modal) onCloseModal();
   }
 })();
