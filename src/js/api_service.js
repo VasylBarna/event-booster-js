@@ -8,7 +8,7 @@ export default class SearchService {
     this.country = '';
   }
   async fetchApiEvent() {
-    const url = `${BASE_URL}/events?classificationName=music&keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&size=200&page=${this.page}`;
+    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&size=200&page=${this.page}`;
     // &page=${this.page}
     // console.log(this);
     const response = await fetch(url);
@@ -19,7 +19,7 @@ export default class SearchService {
     // const allEvents = _embedded.events;
     // const totalPages = page.totalPages;
 
-    return _embedded ? _embedded.events: null;
+    return _embedded ? _embedded.events : null;
   }
   get query() {
     return this.searchQuery;
