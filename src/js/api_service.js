@@ -19,7 +19,7 @@ export default class SearchService {
     // const allEvents = _embedded.events;
     // const totalPages = page.totalPages;
 
-    return _embedded ? _embedded.events: null;
+    return _embedded ? _embedded.events : null;
   }
   get query() {
     return this.searchQuery;

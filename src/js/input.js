@@ -1,31 +1,35 @@
-import eventCardsTpl from '../templates/eventCardsTpl.hbs';
+//import eventCardsTpl from '../templates/eventCardsTpl.hbs';
 import templateMany from '../templates/templateCountry.hbs';
 import isoCountries from '../js/isoCountry.js';
-//import { refs } from './js/refs';
+import { refs } from '../js/refs';
 import SearchService from './api_service';
 import debounce from 'lodash.debounce';
+import onFetchError from '../js/pnotify.js';
+import paginationCreate from '../js/pagination.js';
 const searchService = new SearchService();
 
-const inputRef = document.querySelector('.input');
-//const eventList = document.querySelector('.cards-list');
-const optionRef = document.querySelector('.country-option');
-const selectRef = document.querySelector('.select-country');
-inputRef.addEventListener('input', debounce(fetchData, 500));
-selectRef.addEventListener('change', debounce(fetchCountry, 500));
+
+refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
+refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
 
 function fetchData() {
-  searchService.searchQuery = this.value;
+  searchService.searchQuery = this.value.trim();
 
   searchService.fetchApiEvent().then(renderData);
 }
 
 function renderData(dataRender) {
   console.log(dataRender);
-  if (!renderData) {
-    //To Do:swowAlert.here
+  if (!dataRender) {
+    
+    onFetchError.onFetchNotice('No events found');
+    $('#data-container').html('');
+
   }
-  var markup = eventCardsTpl(dataRender);
-  $('#data-container').html(markup);
+  else {paginationCreate(dataRender);
+  }
+  //var markup = eventCardsTpl(dataRender);
+  //$('#data-container').html(markup);
 }
 
 function fetchCountry(e) {
@@ -36,5 +40,5 @@ function fetchCountry(e) {
 renderCountries();
 function renderCountries() {
   const markupCountries = templateMany(isoCountries);
-  optionRef.insertAdjacentHTML('afterend', markupCountries);
+  refs.optionRef.insertAdjacentHTML('afterend', markupCountries);
 }

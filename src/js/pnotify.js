@@ -25,9 +25,9 @@ function onFetchSuccess() {
 
 function onFetchError() {
   error({
-    text: `${message}`,
+    text: `No events`,
     delay: 2000,
   });
 }
 
-export { onFetchNotice, onFetchInfo, onFetchSuccess, onFetchError };
+export default { onFetchNotice, onFetchInfo, onFetchSuccess, onFetchError };
