@@ -8,7 +8,7 @@ export default class SearchService {
     this.country = '';
   }
   async fetchApiEvent() {
-    const url = `${BASE_URL}/events?keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&size=200&page=${this.page}`;
+    const url = `${BASE_URL}/events?classificationName=music&keyword=${this.searchQuery}&apikey=${KEY}&countryCode=${this.country}&size=200&page=${this.page}`;
     // &page=${this.page}
     // console.log(this);
     const response = await fetch(url);
