@@ -1,10 +1,11 @@
-import eventCardsTpl from '../templates/eventCardsTpl.hbs';
+//import eventCardsTpl from '../templates/eventCardsTpl.hbs';
 import templateMany from '../templates/templateCountry.hbs';
 import isoCountries from '../js/isoCountry.js';
 import { refs } from '../js/refs';
 import SearchService from './api_service';
 import debounce from 'lodash.debounce';
 import onFetchError from '../js/pnotify.js';
+import paginationCreate from '../js/pagination.js';
 const searchService = new SearchService();
 
 
@@ -20,12 +21,15 @@ function fetchData() {
 function renderData(dataRender) {
   console.log(dataRender);
   if (!dataRender) {
-    console.log(onFetchError);
-    onFetchError.onFetchError();
     
+    onFetchError.onFetchNotice('No events found');
+    $('#data-container').html('');
+
   }
-  var markup = eventCardsTpl(dataRender);
-  $('#data-container').html(markup);
+  else {paginationCreate(dataRender);
+  }
+  //var markup = eventCardsTpl(dataRender);
+  //$('#data-container').html(markup);
 }
 
 function fetchCountry(e) {
