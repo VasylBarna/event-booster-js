@@ -1,5 +1,5 @@
 var isoCountries = {
-    'all countries': '',
+    '': '',
     'AF' : 'Afghanistan',
     'AX' : 'Aland Islands',
     'AL' : 'Albania',
