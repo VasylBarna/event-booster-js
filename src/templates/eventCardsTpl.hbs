@@ -5,7 +5,9 @@
       <p class='card-title'>{{name}}</p>
       <p class='event-date'>{{dates.start.localDate}}</p>
       {{#if _embedded.venues.0.name}}
-        <a class='event-location' href=''>{{_embedded.venues.0.name}}</a>
+        <a class='event-location' href=''>
+          <i class="material-icons button__icon"> room </i>
+        {{_embedded.venues.0.name}}</a>
       {{else}}
         <a class='event-location' href=''>{{name}}</a>
       {{/if}}
