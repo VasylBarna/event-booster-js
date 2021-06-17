@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 78px;
   padding-bottom: 112px;
+  
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
@@ -11,13 +12,15 @@
   @media screen and (min-width: 1280px) {
     padding-bottom: 192px;
   }
-
+  
   background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
     url('../images/header-img/bg-mob/h-bg-mob-1x.jpg'),
     url('../images/header-img/bg-mob/h-bg-mob-1x.webp');
+    
 
-  background-color: rgb(14, 14, 14);
+ // background-color: rgb(14, 14, 14);
   background-size: 320px 364px;
+  z-index: 2;
 
   background-position: center;
   background-size: cover;
@@ -92,7 +95,6 @@
     }
   }
 }
-
 .header-favorites-btn {
   position: absolute;
   top: 20px;
@@ -195,7 +197,7 @@ form {
 }
 .button {
   position: absolute;
-  z-index: 1004;
+  z-index: 14;
 
   padding: 10px;
   font-weight: 400;
@@ -216,7 +218,7 @@ form {
 
 .logo {
   position: absolute;
-  z-index: 1000;
+  z-index: 7;
   top: -90px;
   left: -107px;
 
@@ -230,13 +232,13 @@ form {
   );
   backdrop-filter: blur(30px);
 
-  :hover {
-    transform: rotate(90deg);
-  }
-  :focus {
-    transform: rotate(90deg);
-  }
-  cursor: pointer;
+  //:hover {
+  //  transform: rotate(90deg);
+  //}
+  //:focus {
+  //  transform: rotate(90deg);
+  //}
+ // cursor: pointer;
   border-radius: 50%;
 
   @media screen and (min-width: 768px) {
@@ -259,14 +261,14 @@ form {
 
 .logo-img {
   position: absolute;
-  z-index: 1001;
+  z-index: 11;
   bottom: 0;
   right: 0;
 }
 
 .header-overlay {
   position: absolute;
-  z-index: 1003;
+  z-index: 12;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -277,4 +279,8 @@ form {
   @media screen and (min-width: 1280px) {
     background: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%);
   }
+}
+
+.header-box {
+ height: 100%;
 }
