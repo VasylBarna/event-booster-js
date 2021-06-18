@@ -11,5 +11,5 @@
     function toggleModal(event) {
     event.preventDefault();
     modalStudents.classList.toggle('modal-open');
-backdropFooterModal.classList.toggle('is-hidden-footer');
+    backdropFooterModal.classList.toggle('is-hidden-footer');
     }
