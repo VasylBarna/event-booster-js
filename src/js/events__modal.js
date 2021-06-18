@@ -1,3 +1,4 @@
+import SearchService from './api_service';
 import { refs } from './refs';
 import eventsModalTpl from '../templates/events__modal.hbs';
 
@@ -33,7 +34,35 @@ export default (() => {
 refs.buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
 
 function onBuyTicketsBtn() {
+  console.log('work');
+
   const whenValue = refs.dataModalWhere.textContent;
 
-  refs.eventsList.insertAdjacentHTML('beforeend', eventsModalTpl(whenValue));
+  refs.eventsList.insertAdjacentHTML('beforeend', eventsModalTpl());
 }
+
+// ?========= функціонал Андрія =============
+
+// refs.openModalBtn.addEventListener('click', onOpenModalBtn);
+
+// function onOpenModalBtn(e) {
+//   const curentImg = e.target.src;
+//   refs.mainModalFirstImg.src = curentImg;
+//   refs.mainModalSecondImg.src = curentImg;
+// }
+
+// const searchServiceId = new SearchService();
+
+// function onOpenModalBtn(e) {
+//   const id = e.target.dataset.id;
+//   console.log('id', id);
+
+//   searchServiceId.fetchApiEvent().then(data =>
+//     data.map(el => {
+//       if (el.id === id) {
+//         refs.mainModalFirstImg.src = el.images[5].url;
+//         refs.mainModalSecondImg.src = el.images[8].url;
+//       }
+//     }),
+//   );
+// }
