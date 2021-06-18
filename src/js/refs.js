@@ -10,8 +10,9 @@ const refs = {
   inputRef: document.querySelector('.input'),
   optionRef: document.querySelector('.country-option'),
   selectRef: document.querySelector('.select-country'),
-
-
+  openModalBtn: document.querySelector('[data-modal-open]'),
+  closeModalBtn: document.querySelector('[data-modal-close]'),
+  modal: document.querySelector('[data-modal]'),
 };
 
 export { refs };
