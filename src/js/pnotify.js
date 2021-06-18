@@ -1,5 +1,6 @@
 import '@pnotify/core/dist/BrightTheme.css';
 import { notice, info, success, error } from '@pnotify/core';
+import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/core/dist/PNotify.css';
 
 function onFetchNotice(message) {
@@ -9,23 +10,23 @@ function onFetchNotice(message) {
   });
 }
 
-function onFetchInfo() {
+function onFetchInfo(message) {
   info({
     text: `${message}`,
     delay: 2000,
   });
 }
 
-function onFetchSuccess() {
+function onFetchSuccess(message) {
   success({
     text: `${message}`,
     delay: 2000,
   });
 }
 
-function onFetchError() {
+function onFetchError(message) {
   error({
-    text: `No events`,
+    text: `${message}`,
     delay: 2000,
   });
 }
