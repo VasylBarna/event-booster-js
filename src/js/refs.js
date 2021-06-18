@@ -7,6 +7,8 @@ const refs = {
   eventsModal: document.querySelector('[data-events-modal]'),
   buyTicketsBtn: document.querySelector('.modal-btn'), //Юра кнопка по який дод квитки в корзину
   eventsList: document.querySelector('.events__list'), //Юра список в який дод квитки
+  mainModalFirstImg: document.querySelector('.modal-img-first'), // Юра велика img в який передаєм забраження при відкриті головної модалки
+  mainModalSecondImg: document.querySelector('.modal-img-second'), //Юра менша img в який передаєм забраження при відкриті головної модалки
   inputRef: document.querySelector('.input'),
   optionRef: document.querySelector('.country-option'),
   selectRef: document.querySelector('.select-country'),
