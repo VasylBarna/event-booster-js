@@ -21,11 +21,11 @@ export default (() => {
 
     const searchServiceId = new SearchService();
 
-    const id = e.target.dataset.id;
+    const targetId = e.target.dataset.id;
 
     searchServiceId
-      .fetchApiById(id)
-      .then(el => eventsModalTpl(el))
+      .fetchApiById(targetId)
+      .then(el => modalTpl(el))
       .then(el => {
         refs.mainModal.innerHTML = el;
 
@@ -35,7 +35,42 @@ export default (() => {
 
         function onBuyTicketsBtn() {
           console.log('work');
+
+          searchServiceId
+            .fetchApiById(targetId)
+            .then(el => eventsModalTpl(el))
+            .then(el => refs.eventsList.insertAdjacentHTML('beforeend', el));
         }
+
+        // ? провірка на те чи є такий елент вже
+        // тре провіряти масив елементів (їх ід)який вже в корзині
+        // function onBuyTicketsBtn() {
+        //   searchServiceId
+        //     .fetchApiById(targetId)
+        //     .then(el => {
+        //       console.log('target', targetId);
+        //       console.log('el', el);
+        //       console.log('id', el.id);
+        //       const obj = {
+        //         arrCardId: [],
+        //         el: el,
+        //       };
+
+        //       obj.arrCardId.push(el.id);
+
+        //       return obj;
+        //     })
+        //     .then(item => {
+        //       console.log('item', item);
+
+        //       if (item.arrCardId.includes(targetId)) {
+        //         return console.log('take ee'); //TODO тут потрібен ponifay
+        //       }
+
+        //       eventsModalTpl(item);
+        //       refs.eventsList.insertAdjacentHTML('beforeend', el);
+        //     });
+        // }
       });
   }
 
