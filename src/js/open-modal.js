@@ -26,7 +26,17 @@ export default (() => {
     searchServiceId
       .fetchApiById(id)
       .then(el => eventsModalTpl(el))
-      .then(el => (refs.mainModal.innerHTML = el));
+      .then(el => {
+        refs.mainModal.innerHTML = el;
+
+        const buyTicketsBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
+        buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
+        console.log(buyTicketsBtn);
+
+        function onBuyTicketsBtn() {
+          console.log('work');
+        }
+      });
   }
 
   function onCloseModal() {
