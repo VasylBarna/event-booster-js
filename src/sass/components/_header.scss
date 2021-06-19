@@ -197,6 +197,42 @@ form {
     }
   }
 }
+origin/input-sub
+.input {
+  width: 270px;
+  height: 40px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(147, 147, 147, 1);
+  color: rgba(255, 255, 255, 0.835);
+}
+.button {
+  position: absolute;
+  z-index: 14;
+
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  top: 0px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(147, 147, 147, 1);
+  border-radius: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.835);
+}
+.input::placeholder {
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.835);
+}
+
+
 
 .logo {
   position: absolute;
