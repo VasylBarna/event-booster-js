@@ -1,9 +1,7 @@
-<div class="modal-data-second">
-  <img class="modal-img-second" src="{{eventImages.0.url}}"
-    alt="{{name}}" />
-  <div class="modal-hero">
-    <img class="modal-img-first" src="{{eventImages.1.url}}"
-      alt="{{name}}" />
+<div class='modal-data-second'>
+  <img class='modal-img-second' src='{{eventImages.0.url}}' alt='{{name}}' />
+  <div class='modal-hero'>
+    <img class='modal-img-first' src='{{eventImages.1.url}}' alt='{{name}}' />
     <div class='modal-description'>
       <h1 class='modal-title'>INFO</h1>
       <p class='modal-text'>
@@ -14,14 +12,16 @@
         {{dates.start.localDate}}
         {{dates.start.localTime}}
         <br />
-        <span class='modal-text-first'>{{_embedded.venues.city.name}}/{{_embedded.venues.country.name}}</span>
+        <span
+          class='modal-text-first'
+        >{{_embedded.venues.city.name}}/{{_embedded.venues.country.name}}</span>
       </p>
       <h2 class='modal-title'>WHERE</h2>
       {{!-- <p class='modal-text'>{{_embedded.venues.city.name}}, {{_embedded.venues.country.name}}</p> --}}
       {{#if _embedded.venues.0.name}}
-      <p class='modal-text'>{{_embedded.venues.0.name}}</p>
+        <p class='modal-text'>{{_embedded.venues.0.name}}</p>
       {{else}}
-      <p class='modal-text'>{{name}}</p>
+        <p class='modal-text'>{{name}}</p>
       {{/if}}
       <p class='modal-text'></p>
       <h2 class='modal-title'>WHO</h2>
@@ -41,7 +41,7 @@
         {{priceRanges.0.max}}
         {{priceRanges.0.currency}}
       </p>
-      <a target="_blank" href="{{url}}">
+      <a href='{{url}}'>
         <button class='modal-btn buy-standart'>BUY TICKETS</button></a>
       <p class='modal-text'>
         <svg class='icon-ticket'>
@@ -49,10 +49,10 @@
         </svg>
         VIP{{1000-1500 UAH}}
       </p>
-      <a target="_blank" href="{{url}}">
+      <a href='{{url}}'>
         <button class='modal-btn buy-vip'>BUY TICKETS</button></a>
     </div>
   </div>
-  <a target="_blank" href="{{url}}"><button class="modal-btn-more btn" target="_blink">
-      <span class="style-search">MORE FROM THIS AUTHOR</span></button></a>
+  <a href='{{url}}'><button class='modal-btn-more btn'>
+      <span class='style-search'>MORE FROM THIS AUTHOR</span></button></a>
 </div>

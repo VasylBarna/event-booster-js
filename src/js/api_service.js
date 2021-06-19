@@ -21,6 +21,20 @@ export default class SearchService {
 
     return _embedded ? _embedded.events : null;
   }
+
+  async fetchApiById(id) {
+    const url = `${BASE_URL}/events/${id}.json?apikey=${KEY}`;
+
+    // return fetch(url)
+    //   .then(response => response.json())
+    //   .catch(error => console.log('error', error));
+
+    const response = await fetch(url);
+    const data = await response.json();
+    // console.log(data);
+    return data;
+  }
+
   get query() {
     return this.searchQuery;
   }

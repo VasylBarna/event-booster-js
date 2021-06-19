@@ -1,3 +1,4 @@
+import SearchService from './api_service';
 import { refs } from './refs';
 import eventsModalTpl from '../templates/events__modal.hbs';
 
@@ -30,10 +31,69 @@ export default (() => {
   }
 })();
 
-refs.buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
+// refs.buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
 
-function onBuyTicketsBtn() {
-  const whenValue = refs.dataModalWhere.textContent;
+// function onBuyTicketsBtn() {
+//   console.log('work');
 
-  refs.eventsList.insertAdjacentHTML('beforeend', eventsModalTpl(whenValue));
+//   const whenValue = refs.dataModalWhere.textContent;
+
+//   refs.eventsList.insertAdjacentHTML('beforeend', eventsModalTpl());
+// }
+
+// ?========= функціонал Андрія =============
+
+// refs.openModalBtn.addEventListener('click', onOpenModalBtn);
+
+// function onOpenModalBtn(e) {
+//   const curentImg = e.target.src;
+//   refs.mainModalFirstImg.src = curentImg;
+//   refs.mainModalSecondImg.src = curentImg;
+// }
+
+// const searchServiceId = new SearchService();
+
+// function onOpenModalBtn(e) {
+//   const id = e.target.dataset.id;
+//   console.log('id', id);
+
+//   searchServiceId.fetchApiEvent().then(data =>
+//     data.map(el => {
+//       if (el.id === id) {
+//         refs.mainModalFirstImg.src = el.images[5].url;
+//         refs.mainModalSecondImg.src = el.images[8].url;
+//       }
+//     }),
+//   );
+// }
+
+//! fetch по id
+
+const searchServiceId = new SearchService();
+
+// const value = searchServiceId.fetchApiById();
+// console.log(value);
+
+refs.openModalBtn.addEventListener('click', onOpenModal);
+
+function onOpenModal(e) {
+  if ((e.target.nodeName !== 'IMG') & 'P') {
+    return;
+  }
+
+  const id = e.target.dataset.id;
+  console.log('id', id);
+
+  searchServiceId
+    .fetchApiById(id)
+    // .then(id => console.log(id))
+    .then(el => eventsModalTpl(el))
+    .then(el => (refs.mainModal.innerHTML = el));
+
+  // console.log(refs.mainModal);
+
+  // refs.mainModal.innerHTML = eventsModalTpl(value);
+
+  document.body.classList.add('data-modal-open');
+  refs.modal.classList.remove('is-hidden');
 }
