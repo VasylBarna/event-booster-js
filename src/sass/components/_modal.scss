@@ -37,7 +37,7 @@ img {
   padding-left: 12px;
   width: 272px;
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: $modal-bg;
@@ -49,14 +49,14 @@ img {
     padding-bottom: 56px;
     padding-left: 60px;
     width: 595px;
-    top: 70%;
+    top: 50%;
     border-radius: 300px 0px;
   }
   @media screen and (min-width: 1280px) {
     padding: 62px 32px;
     width: 930px;
     max-height: 1023px;
-    top: 75%;
+    top: 50%;
   }
 }
 .modal-hero {
@@ -279,9 +279,10 @@ img {
   position: absolute;
   top: 30px;
   right: 30px;
-  width: 32px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
   padding: 0;
+  z-index: inherit;
   cursor: pointer;
   color: $bg-btn-color;
   background-color: transparent;
@@ -294,22 +295,17 @@ img {
   }
 }
 .modal-icon-close {
-  width: 17px;
-  height: 17px;
+  width: 25px;
+  height: 25px;
   fill: currentColor;
   transition: color 250ms $time-distribution-function;
-  @media screen and (min-width: 1280px) {
-    width: 25px;
-    height: 25px;
-  }
 }
 .icon-ticket {
   margin-right: 13px;
-  width: 24px;
-  height: 16px;
-  vertical-align: top;
-  @media screen and (min-width: 1280px) {
-    width: 29px;
-    height: 19px;
+  vertical-align: bottom;
+    &:hover {
+    transform: scale(2);
+    box-shadow: 0 10px 5px -5px $bg-btn-color;
+    transition: opacity 250ms $time-distribution-function;
   }
 }
