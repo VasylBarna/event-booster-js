@@ -1,3 +1,4 @@
+
 <button class="modal-close">
   <svg class="modal-icon-close" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -7,11 +8,10 @@
   </svg>
 </button>
 <div class="modal-data-second">
-  <img class="modal-img-second" src="{{eventImages.0.url}}"
-    alt="{{name}}" />
+  <img class="modal-img-second" src="{{eventImages.0.url}}" alt="{{name}}" />
   <div class="modal-hero">
-    <img class="modal-img-first" src="{{eventImages.1.url}}"
-      alt="{{name}}" />
+    <img class="modal-img-first" src="{{eventImages.1.url}}" alt="{{name}}" />
+
     <div class='modal-description'>
       <h1 class='modal-title'>INFO</h1>
       <p class='modal-text'>
@@ -22,13 +22,15 @@
         {{dates.start.localDate}}
         {{dates.start.localTime}}
         <br />
-        <span class='modal-text-first'>{{_embedded.venues.city.name}}/{{_embedded.venues.country.name}}</span>
+        <span
+          class='modal-text-first'
+        >{{_embedded.venues.city.name}}/{{_embedded.venues.country.name}}</span>
       </p>
       <h2 class='modal-title'>WHERE</h2> --}}
       {{#if _embedded.venues.0.name}}
-      <p class='modal-text'>{{_embedded.venues.0.name}}</p>
+        <p class='modal-text'>{{_embedded.venues.0.name}}</p>
       {{else}}
-      <p class='modal-text'>{{name}}</p>
+        <p class='modal-text'>{{name}}</p>
       {{/if}}
       <p class='modal-text'></p>
       <h2 class='modal-title'>WHO</h2>
@@ -48,7 +50,7 @@
         {{priceRanges.0.max}}
         {{priceRanges.0.currency}}
       </p>
-      <a href="{{url}}">
+      <a href='{{url}}'>
         <button class='modal-btn buy-standart'>BUY TICKETS</button></a>
       <p class='modal-text'>
         <svg class="icon-ticket" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
@@ -56,11 +58,12 @@
           <path
             d="M15 21h-2v-2h2v2zm-2-7h-2v5h2v-5zm8-2h-2v4h2v-4zm-2-2h-2v2h2v-2zM7 12H5v2h2v-2zm-2-2H3v2h2v-2zm7-5h2V3h-2v2zm-7.5-.5v3h3v-3h-3zM9 9H3V3h6v6zm-4.5 7.5v3h3v-3h-3zM9 21H3v-6h6v6zm7.5-16.5v3h3v-3h-3zM21 9h-6V3h6v6zm-2 10v-3h-4v2h2v3h4v-2h-2zm-2-7h-4v2h4v-2zm-4-2H7v2h2v2h2v-2h2v-2zm1-1V7h-2V5h-2v4h4zM6.75 5.25h-1.5v1.5h1.5v-1.5zm0 12h-1.5v1.5h1.5v-1.5zm12-12h-1.5v1.5h1.5v-1.5z" />
         </svg>
+
       <b style="color:goldenrod;">VIP</b>1000-1500 USD</p>
       <a href="{{url}}">
         <button class='modal-btn buy-vip'>BUY TICKETS</button></a>
     </div>
   </div>
-  <a href="{{url}}"><button class="modal-btn-more btn">
-      <span class="style-search">MORE FROM THIS AUTHOR</span></button></a>
+  <a href='{{url}}'><button class='modal-btn-more btn'>
+      <span class='style-search'>MORE FROM THIS AUTHOR</span></button></a>
 </div>

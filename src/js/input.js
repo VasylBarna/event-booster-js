@@ -3,20 +3,31 @@ import templateMany from '../templates/templateCountry.hbs';
 import isoCountries from '../js/isoCountry.js';
 import { refs } from '../js/refs';
 import SearchService from './api_service';
-import debounce from 'lodash.debounce';
+//import debounce from 'lodash.debounce';
 import onFetchError from '../js/pnotify.js';
 import paginationCreate from '../js/pagination.js';
 import loader from './loader.js';
 const searchService = new SearchService();
+refs.formRef.addEventListener('submit', fetchData);
+//refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
+refs.selectRef.addEventListener('change', fetchCountry);
 
-refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
-refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
-
-function fetchData() {
-  searchService.searchQuery = this.value.trim();
+function fetchData(e) {
+  e.preventDefault();
+  searchService.searchQuery = refs.inputRef.value.trim();
 
   loader();
-  searchService.fetchApiEvent().then(renderData);
+
+
+//refs.buttonRef.addEventListener('onclick', fetchData);
+//refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
+//refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
+
+//function fetchData() {
+  //console.log("fetchData");
+  //searchService.searchQuery = '';
+  searchService.fetchApiEvent()
+  .then(renderData);
 }
 
 function renderData(dataRender) {
