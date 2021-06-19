@@ -55,6 +55,9 @@
   }
   &:hover,
   &:focus {
+    // 1px 4px 6px rgb(0 0 0 / 16%), 0 4px 4px rgb(0 0 0 / 6%), 0 1px 1px rgb(0 0 0 / 12%)
+    box-shadow:  0px -13px 14px -11px rgba(238, 95, 234, 0.48) inset;
+    border-radius: 28px 0px;
     cursor: pointer;
     transform: translateY(-20px);
     outline: transparent;
@@ -91,6 +94,9 @@
 }
 .align > p {
   padding-top: 5px;
+}
+.align{
+  padding-bottom: 5px;
 }
 .card-title {
   font-weight: bold;
