@@ -1,1 +1,14 @@
 //for inputs in header
+select:invalid:not(:focus) {
+    color: white;
+  }
+  select:invalid:focus {
+    color: transparent;
+  }
+  select:focus option {
+      background-color: rgba(255, 255, 255, 0.472);
+    color: blue;
+  }
+  
+  
+ 

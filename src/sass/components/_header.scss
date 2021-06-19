@@ -209,7 +209,7 @@ form {
   outline: none;
   border: none;
   background-color: rgba(147, 147, 147, 1);
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.835);
 }
 .button {
   position: absolute;
@@ -218,18 +218,19 @@ form {
   padding: 10px;
   font-weight: 400;
   font-size: 16px;
-  top: 0;
-  right: 0px;
+  top: 0px;
+  right: 10px;
   width: 40px;
   height: 40px;
   border: none;
   background-color: rgba(147, 147, 147, 1);
   border-radius: 20px;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.835);
 }
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.835);
 }
 
 .logo {
