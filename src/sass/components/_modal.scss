@@ -282,6 +282,7 @@ img {
   width: 32px;
   height: 32px;
   padding: 0;
+  z-index: inherit;
   cursor: pointer;
   color: $bg-btn-color;
   background-color: transparent;
@@ -305,11 +306,10 @@ img {
 }
 .icon-ticket {
   margin-right: 13px;
-  width: 24px;
-  height: 16px;
-  vertical-align: top;
-  @media screen and (min-width: 1280px) {
-    width: 29px;
-    height: 19px;
+  vertical-align: bottom;
+    &:hover {
+    transform: scale(2);
+    box-shadow: 0 10px 5px -5px $bg-btn-color;
+    transition: opacity 250ms $time-distribution-function;
   }
 }
