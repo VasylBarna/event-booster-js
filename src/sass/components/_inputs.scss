@@ -1,1 +1,39 @@
-//for inputs in header
+.input {
+  width: 270px;
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: $input-text-color;
+}
+.button {
+  position: absolute;
+  z-index: 14;
+
+  padding-right: 50px;
+  font-weight: 400;
+  font-size: 16px;
+  top: 0;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  color: $input-text-color;
+}
+.input::placeholder {
+  color: $input-text-color;
+}
+
+select option {
+  background-color: rgb(117, 116, 116);
+  color: #fff;
+}
