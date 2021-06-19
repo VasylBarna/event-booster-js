@@ -12,7 +12,7 @@ export default (() => {
     if ((e.target.nodeName !== 'IMG') & 'P') {
       return;
     }
-    console.log(e.target);
+    // console.log(e.target);
     document.body.classList.add('data-modal-open');
 
     refs.modal.classList.remove('is-hidden');
