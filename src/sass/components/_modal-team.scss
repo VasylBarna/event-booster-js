@@ -9,15 +9,16 @@
   backdrop-filter: blur(3px);
     transition: opacity 250ms $time-distribution-function;
     overflow-y: scroll;
-    // overflow: hidden;
   }
 
   .backdrop-footer.is-hidden-footer {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    // overflow-y: auto;
-    // overflow: hidden;
+  }
+
+  body.modal-open {
+    overflow: hidden;
   }
 
   .footer-modal {
@@ -27,16 +28,16 @@
     left: 50%;
     z-index: 100;
     transform: translate(-50%, -50%);
-    background-color: rgb(248, 206, 213);
+    background-color: rgb(245, 219, 223);
     border-radius: 20px 0px;
 
     @media screen and (max-width: 767px) {
-      width: auto;
+      width: 310px;
      height: auto;
     }
     @media screen and (min-width: 768px) {
-      width: 600px;
-      height: auto;
+      width: 550px;
+      height: 650px;
     }
   }
 
@@ -45,21 +46,24 @@
     top: 6%;
     left: 94%;
     transform: translate(-50%, -50%);
-    padding: 7px 10px;
     border-radius: 5px 0px;
     border: none;
     cursor: pointer;
+    @media screen and (max-width: 767px) {
+      padding: 5px 8px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 7px 10px;
+
+    }
   }
+
   .modal-icon-close-footer {
-    width: 10px;
+      width: 10px;
     height: 10px;
   }
 
   // modal
-
-  .students-info {
-   
-  }
 
   .line-first {
      display: flex;
@@ -71,29 +75,34 @@
      justify-content: space-evenly;
       }
 
+  .line-third {
+    display: flex;
+    justify-content: space-evenly;
+     }
+
 .students-item {
   border: 1px;
   @media screen and (max-width: 767px) {
-    width: 70px;
+    width: 65px;
    height: auto;
    margin: 10px;
   }
   @media screen and (min-width: 768px) {
     width: 100px;
     height: auto; 
-     margin: 15px;
+     margin: 12px;
   }
 }
  
  .students-foto {
   border-radius: 10px 0px;
   @media screen and (max-width: 767px) {
-    width: 70px;
-   height: auto;
+    width: 55px;
+   height: 55px;
   }
   @media screen and (min-width: 768px) {
     width: 100px;
-    height: auto;
+    height: 100px;
   }
  }
 
@@ -118,8 +127,8 @@ font-size: 14px;
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 767px) {
-      width: 34px;
-    height: 34px;
+      width: 30px;
+    height: 30px;
     }
     @media screen and (min-width: 768px) {
       width: 44px;
@@ -129,14 +138,6 @@ font-size: 14px;
 
 .students-item ul {
 display: flex;
-@media screen and (max-width: 767px) {
-  width: 34px;
-height: 34px;
-}
-@media screen and (min-width: 768px) {
-  width: 44px;
-height: 44px;
-}
 }
 
   .students-icon {
@@ -150,8 +151,8 @@ height: 44px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
     @media screen and (max-width: 767px) {
-      width: 34px;
-    height: 34px;
+      width: 27px;
+    height: 25px;
     }
     @media screen and (min-width: 768px) {
       width: 44px;
