@@ -1,11 +1,17 @@
 import { data } from 'browserslist';
 import * as pagination from 'paginationjs';
+import onFetchError from './pnotify.js';
 import cardsTmp from '../templates/eventCardsTpl.hbs';
 import SearchService from './api_service.js';
 
 const fetchService = new SearchService();
 
-fetchService.fetchApiEvent().then(data => paginationCreate(data));
+fetchService.fetchApiEvent().then(data => {
+  if (!data) {
+    onFetchError('No events found');
+  }
+  paginationCreate(data);
+});
 
 // onFetchTake();
 
@@ -21,7 +27,7 @@ fetchService.fetchApiEvent().then(data => paginationCreate(data));
 
 export default function paginationCreate(items) {
   $('#pagination-container').pagination({
-    pageSize: 12,
+    pageSize: 20,
     showPrevious: false,
     showNext: false,
     dataSource: items,
