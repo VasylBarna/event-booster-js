@@ -13,4 +13,4 @@ import './js/input.js';
 //   .then(markup => refs.cardsList.insertAdjacentHTML('beforeend', markup));
 
 import './js/loader.js';
- 
+// import './js/timer';

@@ -29,7 +29,10 @@ export default (() => {
           searchServiceId
             .fetchApiById(targetId)
             .then(el => eventsModalTpl(el))
-            .then(el => refs.eventsList.insertAdjacentHTML('beforeend', el));
+            .then(el => {
+              refs.eventsList.insertAdjacentHTML('beforeend', el);
+              el.classList.remove('.hover');
+            });
         }
       });
   }
