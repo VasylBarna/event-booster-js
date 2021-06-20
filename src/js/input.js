@@ -18,24 +18,25 @@ function fetchData(e) {
 
   loader();
 
+  //refs.buttonRef.addEventListener('onclick', fetchData);
+  //refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
+  //refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
 
-//refs.buttonRef.addEventListener('onclick', fetchData);
-//refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
-//refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
-
-//function fetchData() {
+  //function fetchData() {
   //console.log("fetchData");
   //searchService.searchQuery = '';
-  searchService.fetchApiEvent()
-  .then(renderData);
+  searchService.fetchApiEvent().then(renderData);
 }
 
 function renderData(dataRender) {
   console.log(dataRender);
   if (!dataRender) {
-    onFetchError.onFetchNotice('No events found');
-    $('#data-container').html('');
+    onFetchError.onFetchNotice(`Sorry, but we haven't found any events for your request`);
+    refs.dataContainer.innerHTML = '';
+    refs.paginationContainer.innerHTML = `<h2 class="pagination-error">Sorry, but we haven't found any events for your request</h2>`;
+    // $('#data-container').html('');
   } else {
+    refs.paginationContainer.innerHTML = '';
     paginationCreate(dataRender);
   }
 
