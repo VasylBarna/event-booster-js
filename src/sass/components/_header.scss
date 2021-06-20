@@ -119,8 +119,9 @@
     right: 90px;
     width: 80px;
     height: 80px;
-    transition: transform 250ms $time-distribution-function;
-    &:hover {
+    transition: transform 250ms $time-distribution-function, background-color 250ms $time-distribution-function;
+    &:hover,
+    &:focus {
       transform: scale(1.1);
       fill: $secondary-color;
       background-color: $accent-color;
