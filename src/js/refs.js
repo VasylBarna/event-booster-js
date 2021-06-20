@@ -1,6 +1,8 @@
 const refs = {
   cardsList: document.querySelector('.cards-list'),
   main: document.querySelector('.main'),
+  dataContainer: document.querySelector('#data-container'),
+  paginationContainer: document.querySelector('#pagination-container'),
   loader: document.querySelector('[data-loader]'),
   eventsOpenModalBtn: document.querySelector('[data-events-modal-open]'),
   eventCloseModalBtn: document.querySelector('[data-events-modal-close]'),
