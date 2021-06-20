@@ -15,7 +15,11 @@
     <div class='modal-description'>
       <h1 class='modal-title'>INFO</h1>
       <p class='modal-text'>
-        {{info}}
+        {{#if info}}
+          {{info}}
+        {{else}}
+          'There is no information about this event'
+        {{/if}}
       </p>
       <h2 class='modal-title'>WHEN</h2>
       <p class='modal-text'>
