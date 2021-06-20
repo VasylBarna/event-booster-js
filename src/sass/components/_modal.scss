@@ -101,6 +101,8 @@ img {
   }
 }
 .modal-text {
+  max-height: 70px;
+  overflow: auto;
   margin-bottom: 10px;
   font-family: $primary-font;
   font-style: normal;
@@ -303,7 +305,7 @@ img {
 .icon-ticket {
   margin-right: 13px;
   vertical-align: bottom;
-    &:hover {
+  &:hover {
     transform: scale(2);
     box-shadow: 0 10px 5px -5px $bg-btn-color;
     transition: opacity 250ms $time-distribution-function;
