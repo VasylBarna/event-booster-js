@@ -36,6 +36,7 @@ img {
   padding-bottom: 104px;
   padding-left: 12px;
   width: 272px;
+  max-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -132,7 +133,7 @@ img {
   margin-bottom: 8px;
   margin-left: auto;
   width: 102px;
-  max-height: 102px;
+  height: 102px;
   object-fit: cover;
   background: #c4c4c4;
   border-radius: 50px;
@@ -303,7 +304,7 @@ img {
 .icon-ticket {
   margin-right: 13px;
   vertical-align: bottom;
-    &:hover {
+  &:hover {
     transform: scale(2);
     box-shadow: 0 10px 5px -5px $bg-btn-color;
     transition: opacity 250ms $time-distribution-function;
