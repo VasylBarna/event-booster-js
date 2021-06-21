@@ -1,15 +1,15 @@
 .header {
   position: relative;
   padding-top: 78px;
-  padding-bottom: 112px;
+  //  padding-bottom: 112px;
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
-    padding-bottom: 183px;
+    //  padding-bottom: 183px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding-bottom: 192px;
+    // padding-bottom: 192px;
   }
 
   background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
@@ -94,9 +94,30 @@
   }
 }
 
+.header-box {
+  position: relative;
+  z-index: 13;
+  padding-bottom: 112px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 183px;
+    border-left: 1px solid #212121;
+    border-right: 1px solid #212121;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 192px;
+    margin-left: -61px;
+    margin-right: -60px;
+  }
+}
+
 .header-favorites-btn {
   display: block;
   position: absolute;
+  z-index: 15;
   top: 20px;
   right: 25px;
   width: 35px;
@@ -181,12 +202,12 @@
 
 .logo {
   position: absolute;
-  z-index: 7;
-  top: -90px;
+  z-index: 14;
+  top: -123px;
   left: -107px;
 
   width: 213px;
-  height: 180px;
+  height: 213px;
 
   background: linear-gradient(
     136.07deg,
@@ -198,32 +219,40 @@
   border-radius: 50%;
   overflow: hidden;
 
-  :hover {
-    //(220,86,197)  transform: rotate(90deg);
-    background-color: rgb(220, 86, 197);
-  }
-  :focus {
-    //  transform: rotate(90deg);
-    background-color: rgb(220, 86, 197);
-  }
-  // cursor: pointer;
+  animation: logomove 4s infinite;
+  animation-delay: 5s;
+  animation-fill-mode: backwards;
 
   @media screen and (min-width: 768px) {
-    top: -151px;
+    top: -208px;
     left: -180px;
 
     width: 359px;
-    height: 302px;
+    height: 359px;
   }
 
   @media screen and (min-width: 1280px) {
-    top: -201px;
+    top: -275px;
     left: -238px;
 
     width: 477px;
-    height: 402px;
+    height: 477px;
   }
   // outline: solid 2px yellow;
+}
+
+@keyframes logomove {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .logo-img {
@@ -258,6 +287,45 @@
   }
 }
 
-//.header-box {
-//height: 100%;
-//}
+.basket-total {
+  position: absolute;
+  z-index: 18;
+
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+
+  border-radius: 50%;
+
+  top: 50px;
+  right: 55px;
+
+  width: 15px;
+  height: 15px;
+
+@media screen and (min-width: 768px) {
+  top: 50px;
+  right: 50px;
+background-color: $accent-color;
+  width: 20px;
+  height: 20px;
+}
+
+  @media screen and (min-width: 1280px) {
+  
+  top: 70px;
+  right: 70px;
+
+  width: 25px;
+  height: 25px;
+}
+}
+
+.basket-value {
+  display: block;
+  color: #ffffff;
+  
+}
