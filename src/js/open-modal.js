@@ -1,8 +1,9 @@
+// import card from '../templates/eventCardsTpl.hbs';
 import { refs } from './refs';
-import card from '../templates/eventCardsTpl.hbs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
+
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
@@ -14,8 +15,10 @@ export default (() => {
     refs.modal.classList.remove('is-hidden');
     window.addEventListener('keydown', onKeydownClose);
     refs.modal.addEventListener('click', onOverlay);
+
     const searchServiceId = new SearchService();
     const targetId = e.target.dataset.id;
+
     searchServiceId
       .fetchApiById(targetId)
       .then(el => modalTpl(el))
@@ -23,7 +26,7 @@ export default (() => {
         refs.mainModal.innerHTML = el;
         const buyTicketsBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
         buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
-        console.log(buyTicketsBtn);
+        // console.log(buyTicketsBtn);
         function onBuyTicketsBtn() {
           console.log('work');
           searchServiceId

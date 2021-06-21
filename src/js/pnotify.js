@@ -39,4 +39,4 @@ function pnotifyError(message) {
   });
 }
 
-export default { pnotifyNotice, pnotifyInfo, pnotifySuccess, pnotifyError };
+export { pnotifyNotice, pnotifyInfo, pnotifySuccess, pnotifyError };

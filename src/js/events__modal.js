@@ -1,6 +1,6 @@
-import SearchService from './api_service';
+// import SearchService from './api_service';
+// import eventsModalTpl from '../templates/events__modal.hbs';
 import { refs } from './refs';
-import eventsModalTpl from '../templates/events__modal.hbs';
 
 export default (() => {
   refs.eventsOpenModalBtn.addEventListener('click', onOpenModal);

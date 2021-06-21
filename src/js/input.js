@@ -4,7 +4,7 @@ import isoCountries from '../js/isoCountry.js';
 import { refs } from '../js/refs';
 import SearchService from './api_service';
 //import debounce from 'lodash.debounce';
-import onFetchError from '../js/pnotify.js';
+import { pnotifyError } from '../js/pnotify.js';
 import paginationCreate from '../js/pagination.js';
 import loader from './loader.js';
 const searchService = new SearchService();
@@ -29,9 +29,9 @@ function fetchData(e) {
 }
 
 function renderData(dataRender) {
-  console.log(dataRender);
+  // console.log(dataRender);
   if (!dataRender) {
-    onFetchError.onFetchNotice(`Sorry, but we haven't found any events for your request`);
+    pnotifyError(`Sorry, but we haven't found any events for your request`);
     refs.dataContainer.innerHTML = '';
     refs.paginationContainer.innerHTML = `<h2 class="pagination-error">Sorry, but we haven't found any events for your request</h2>`;
     // $('#data-container').html('');
