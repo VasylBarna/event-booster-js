@@ -3,6 +3,8 @@ import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import eventsModalTpl from '../templates/events__modal.hbs';
 export default (() => {
+  const searchServiceId = new SearchService();
+
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
 
