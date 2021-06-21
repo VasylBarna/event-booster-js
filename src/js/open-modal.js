@@ -3,7 +3,8 @@ import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
-import { pnotifySuccess } from '../js/pnotify.js';
+import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
+import { favEventsId } from './favEventsId';
 
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -33,15 +34,19 @@ export default (() => {
       });
 
     function onAddToFaforiteBtn() {
-      // console.log('work');
-      searchServiceId
-        .fetchApiById(targetId)
-        .then(el => eventsModalTpl(el))
-        .then(el => {
-          refs.eventsList.insertAdjacentHTML('beforeend', el);
-          // el.classList.remove('.hover');
-          pnotifySuccess('Event added to favorite');
-        });
+      if (favEventsId.includes(targetId)) {
+        pnotifyError('Already exist');
+      } else {
+        searchServiceId
+          .fetchApiById(targetId)
+          .then(el => eventsModalTpl(el))
+          .then(el => {
+            refs.eventsList.insertAdjacentHTML('beforeend', el);
+            // el.classList.remove('.hover');
+            favEventsId.push(targetId);
+            pnotifySuccess('Event added to favorite');
+          });
+      }
     }
   }
 
