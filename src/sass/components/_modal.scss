@@ -36,6 +36,7 @@ img {
   padding-bottom: 104px;
   padding-left: 12px;
   width: 272px;
+  max-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,7 +57,7 @@ img {
     padding: 62px 32px;
     width: 930px;
     max-height: 1023px;
-    top: 50%;
+    top: 550px;
   }
 }
 .modal-hero {
@@ -134,7 +135,7 @@ img {
   margin-bottom: 8px;
   margin-left: auto;
   width: 102px;
-  max-height: 102px;
+  height: 102px;
   object-fit: cover;
   background: #c4c4c4;
   border-radius: 50px;
@@ -223,6 +224,9 @@ img {
   @media screen and (min-width: 1280px) {
     margin-bottom: 31px;
   }
+}
+.buy-basket {
+  display: block;
 }
 
 .modal-btn-more {

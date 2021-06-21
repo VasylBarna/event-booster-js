@@ -1,24 +1,23 @@
 // import card from '../templates/eventCardsTpl.hbs';
 import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
-import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
-<<<<<<< HEAD
+import SearchService from './api_service';
 import CountdownTimer from '../js/timer';
-=======
 import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
 import { favEventsId } from './favEventsId';
 import { updateFavoriteCounter } from './favorite';
->>>>>>> dev
+
 
 export default (() => {
+  const searchServiceId = new SearchService();
+
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
 
   function onOpenModal(e) {
-    if ((e.target.nodeName !== 'IMG') & 'P') {
-      return;
-    }
+    e.preventDefault();
+    if (e.target.nodeName !== 'IMG') return;
 
     document.body.classList.add('data-modal-open');
     refs.modal.classList.remove('is-hidden');
@@ -86,10 +85,14 @@ export default (() => {
   }
 
   function onKeydownClose(e) {
-    if (e.code === 'Escape') onCloseModal();
+    if (e.code === 'Escape') {
+      onCloseModal();
+    }
   }
 
   function onOverlay(e) {
-    if (e.target === refs.modal) onCloseModal();
+    if (e.target === refs.modal) {
+      onCloseModal();
+    }
   }
 })();
