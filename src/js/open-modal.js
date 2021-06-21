@@ -3,13 +3,10 @@ import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
-<<<<<<< HEAD
 import CountdownTimer from '../js/timer';
-=======
 import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
 import { favEventsId } from './favEventsId';
 import { updateFavoriteCounter } from './favorite';
->>>>>>> dev
 
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -37,14 +34,13 @@ export default (() => {
         const eventTime = {
           date: localDate,
           time: localTime,
-        }
+        };
         const date = eventTime;
-        const str =
-        Object.values(date)[0].split("-").join(" ") + " " + Object.values(date)[1];
+        const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
         console.log(str);
 
         const newDate = new CountdownTimer({
-          selector: "#timer-2",
+          selector: '#timer-2',
           targetDate: new Date(str),
         });
         newDate.updateDate();
