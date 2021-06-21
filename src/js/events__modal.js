@@ -1,7 +1,7 @@
 // import SearchService from './api_service';
 // import eventsModalTpl from '../templates/events__modal.hbs';
 import { refs } from './refs';
-import { favEventsId } from './favEventsId';
+import { deleteEventFromFavorite } from './favorite';
 
 export default (() => {
   refs.eventsOpenModalBtn.addEventListener('click', onOpenModal);
@@ -17,18 +17,6 @@ export default (() => {
 
     if (document.querySelectorAll('.events__list li').length > 0) {
       refs.noFavoriteEvents.classList.add('visually-hidden');
-    }
-  }
-
-  function deleteEventFromFavorite(e) {
-    if (e.target.classList.contains('btn-delete-event')) {
-      const eventId = e.target.getAttribute('data-id');
-      document.querySelector(`.events__list [data-id="${eventId}"]`).remove();
-      favEventsId.splice(favEventsId.indexOf(eventId), 1);
-
-      if (document.querySelectorAll('.events__list li').length == 0) {
-        refs.noFavoriteEvents.classList.remove('visually-hidden');
-      }
     }
   }
 

@@ -5,6 +5,7 @@ import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
 import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
 import { favEventsId } from './favEventsId';
+import { updateFavoriteCounter } from './favorite';
 
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -44,6 +45,7 @@ export default (() => {
             refs.eventsList.insertAdjacentHTML('beforeend', el);
             // el.classList.remove('.hover');
             favEventsId.push(targetId);
+            updateFavoriteCounter();
             pnotifySuccess('Event added to favorite');
           });
       }

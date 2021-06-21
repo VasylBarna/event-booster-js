@@ -18,6 +18,7 @@ const refs = {
   modal: document.querySelector('[data-modal]'),
   formRef: document.querySelector('form'),
   buttonRef: document.querySelector('button'),
+  favoriteEventsCounter: document.querySelector('#valuebask'),
 };
 
 export { refs };
