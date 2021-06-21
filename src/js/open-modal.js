@@ -1,29 +1,27 @@
 import SearchService from './api_service';
 import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
+import eventsModalTpl from '../templates/events__modal.hbs';
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
 
   function onOpenModal(e) {
     e.preventDefault();
-    if (!e.target.classList.contains('event-card')) {
-      return;
-    }
-    console.log(e.target);
+    if (e.target.nodeName !== 'IMG') return;
     document.body.classList.add('data-modal-open');
-    refs.backdrop.classList.remove('is-hidden');
+    refs.modal.classList.remove('is-hidden');
     window.addEventListener('keydown', onKeydownClose);
-    refs.backdrop.addEventListener('click', onOverlay);
+    refs.modal.addEventListener('click', onOverlay);
   }
   function onCloseModal() {
     document.body.classList.remove('data-modal-open');
-    refs.backdrop.classList.add('is-hidden');
+    refs.modal.classList.add('is-hidden');
     window.removeEventListener('keydown', onKeydownClose);
-    refs.backdrop.removeEventListener('click', onOverlay);
-      setTimeout(() => {
-      refs.modal.innerHTML = '';
-    }, 300);
+    refs.modal.removeEventListener('click', onOverlay);
+    //   setTimeout(() => {
+    //   refs.modal.innerHTML = '';
+    // }, 300);
   }
   function onKeydownClose(e) {
     if (e.code === 'Escape') {
@@ -31,36 +29,39 @@ export default (() => {
     }
   }
   function onOverlay(e) {
-    if (e.target === refs.backdrop) {
+    if (e.target === refs.modal) {
       onCloseModal();
     }
   }
 })();
 const searchServiceId = new SearchService();
 
-// const value = searchServiceId.fetchApiById();
-// console.log(value);
+const value = searchServiceId.fetchApiById();
+console.log(value);
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 
 function onOpenModal(e) {
-  // if ((e.target.nodeName !== 'IMG') & 'P') {
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') return;
+
+  // if (!e.target.classList.contains('event-card')) {
   //   return;
   // }
-
+  console.log(e.target);
   const id = e.target.dataset.id;
   console.log('id', id);
 
   searchServiceId
     .fetchApiById(id)
     // .then(id => console.log(id))
-    .then(el => modalTpl(el))
+    .then(el => eventsModalTpl(el))
     .then(el => (refs.mainModal.innerHTML = el));
 
-  // console.log(refs.mainModal);
+  console.log(refs.mainModal);
 
-  // refs.mainModal.innerHTML = eventsModalTpl(value);
+  //  refs.mainModal.innerHTML = eventsModalTpl(value);
 
   document.body.classList.add('data-modal-open');
-  refs.backdrop.classList.remove('is-hidden');
+  refs.modal.classList.remove('is-hidden');
 }

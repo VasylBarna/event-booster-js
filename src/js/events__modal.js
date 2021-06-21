@@ -69,31 +69,31 @@ export default (() => {
 
 //! fetch по id
 
-const searchServiceId = new SearchService();
+// const searchServiceId = new SearchService();
 
-// const value = searchServiceId.fetchApiById();
-// console.log(value);
+// // const value = searchServiceId.fetchApiById();
+// // console.log(value);
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
+// refs.openModalBtn.addEventListener('click', onOpenModal);
 
-function onOpenModal(e) {
-  if ((e.target.nodeName !== 'IMG') & 'P') {
-    return;
-  }
+// function onOpenModal(e) {
+//   if ((e.target.nodeName !== 'IMG') & 'P') {
+//     return;
+//   }
 
-  const id = e.target.dataset.id;
-  console.log('id', id);
+//   const id = e.target.dataset.id;
+//   console.log('id', id);
 
-  searchServiceId
-    .fetchApiById(id)
-    // .then(id => console.log(id))
-    .then(el => eventsModalTpl(el))
-    .then(el => (refs.mainModal.innerHTML = el));
+//   searchServiceId
+//     .fetchApiById(id)
+//     // .then(id => console.log(id))
+//     .then(el => eventsModalTpl(el))
+//     .then(el => (refs.mainModal.innerHTML = el));
 
-  // console.log(refs.mainModal);
+//   // console.log(refs.mainModal);
 
-  // refs.mainModal.innerHTML = eventsModalTpl(value);
+//   // refs.mainModal.innerHTML = eventsModalTpl(value);
 
-  document.body.classList.add('data-modal-open');
-  refs.modal.classList.remove('is-hidden');
-}
+//   document.body.classList.add('data-modal-open');
+//   refs.modal.classList.remove('is-hidden');
+// }
