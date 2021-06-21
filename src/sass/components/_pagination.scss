@@ -44,3 +44,8 @@
 .paginationjs-page a:visited {
   color: inherit;
 }
+
+.pagination-error {
+  color: $accent-color;
+  text-align: center;
+}
