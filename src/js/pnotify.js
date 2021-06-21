@@ -3,32 +3,40 @@ import { notice, info, success, error } from '@pnotify/core';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/core/dist/PNotify.css';
 
-function onFetchNotice(message) {
+function pnotifyNotice(message) {
   notice({
     text: `${message}`,
     delay: 2000,
+    addClass: 'pnotify-notice',
+    width: '320px',
   });
 }
 
-function onFetchInfo(message) {
+function pnotifyInfo(message) {
   info({
     text: `${message}`,
-    delay: 2000,
+    delay: 4500,
+    addClass: 'pnotify-info',
+    width: '320px',
   });
 }
 
-function onFetchSuccess(message) {
+function pnotifySuccess(message) {
   success({
     text: `${message}`,
     delay: 2000,
+    addClass: 'pnotify-success',
+    width: '320px',
   });
 }
 
-function onFetchError(message) {
+function pnotifyError(message) {
   error({
     text: `${message}`,
     delay: 2000,
+    addClass: 'pnotify-error',
+    width: '320px',
   });
 }
 
-export default { onFetchNotice, onFetchInfo, onFetchSuccess, onFetchError };
+export { pnotifyNotice, pnotifyInfo, pnotifySuccess, pnotifyError };

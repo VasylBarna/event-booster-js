@@ -1,16 +1,16 @@
-
-<li class='event-card'>
-  <div class="event-frame"></div>
+<li class='event-card' data-id={{id}}>
+  <button class='btn-delete-event' data-event-delete data-id={{id}}></button>
+  <div class='event-frame'></div>
   <img class='card-image' src={{images.2.url}} alt={{name}} data-id={{id}} />
   <div class='align'>
     <p class='card-title'>{{name}}</p>
     <p class='event-date'>{{dates.start.localDate}}</p>
     {{#if _embedded.venues.0.name}}
-    <a class='event-location' href=''>
-      <i class="material-icons button__icon"> room </i>
-      {{_embedded.venues.0.name}}</a>
+      <a class='event-location' href=''>
+        <i class='material-icons button__icon'> room </i>
+        {{_embedded.venues.0.name}}</a>
     {{else}}
-    <a class='event-location' href=''>{{name}}</a>
+      <a class='event-location' href=''>{{name}}</a>
     {{/if}}
   </div>
 </li>

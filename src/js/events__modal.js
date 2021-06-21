@@ -1,6 +1,7 @@
-import SearchService from './api_service';
+// import SearchService from './api_service';
+// import eventsModalTpl from '../templates/events__modal.hbs';
 import { refs } from './refs';
-import eventsModalTpl from '../templates/events__modal.hbs';
+import { deleteEventFromFavorite } from './favorite';
 
 export default (() => {
   refs.eventsOpenModalBtn.addEventListener('click', onOpenModal);
@@ -9,9 +10,14 @@ export default (() => {
   function onOpenModal() {
     document.body.classList.add('events-modal-open');
     refs.eventsModal.classList.remove('is-hidden-events');
+    refs.eventsList.addEventListener('click', deleteEventFromFavorite);
 
     window.addEventListener('keydown', onKeydownClose);
     refs.eventsModal.addEventListener('click', onOverlay);
+
+    if (document.querySelectorAll('.events__list li').length > 0) {
+      refs.noFavoriteEvents.classList.add('visually-hidden');
+    }
   }
 
   function onCloseModal() {

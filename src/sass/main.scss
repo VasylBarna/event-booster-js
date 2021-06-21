@@ -1,5 +1,6 @@
 @import './utils/normalize';
 @import './utils/variables';
+@import './utils/visually-hiden';
 
 @import './base/container';
 
@@ -14,4 +15,6 @@
 @import './components/events__modal';
 
 @import './components/inputs';
+
+@import './components/pnotify';
 @import './components/timer';
