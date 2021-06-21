@@ -102,6 +102,8 @@ img {
   }
 }
 .modal-text {
+  max-height: 70px;
+  overflow: auto;
   margin-bottom: 10px;
   font-family: $primary-font;
   font-style: normal;
