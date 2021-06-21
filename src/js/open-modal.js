@@ -3,6 +3,8 @@ import card from '../templates/eventCardsTpl.hbs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
+import CountdownTimer from '../js/timer';
+
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
@@ -18,7 +20,28 @@ export default (() => {
     const targetId = e.target.dataset.id;
     searchServiceId
       .fetchApiById(targetId)
-      .then(el => modalTpl(el))
+      .then(el => {
+        // modalTpl(el);
+        const { start } = el.dates;
+        const { localDate, localTime } = start;
+        const eventTime = {
+          date: localDate,
+          time: localTime,
+        }
+        const date = eventTime;
+        const str =
+        Object.values(date)[0].split("-").join(" ") + " " + Object.values(date)[1];
+        console.log(str);
+
+        const newDate = new CountdownTimer({
+          selector: "#timer-2",
+          targetDate: new Date(str),
+        });
+        newDate.updateDate();
+        // newDate.stopTimer();
+
+        return modalTpl(el);
+      })
       .then(el => {
         refs.mainModal.innerHTML = el;
         const buyTicketsBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
