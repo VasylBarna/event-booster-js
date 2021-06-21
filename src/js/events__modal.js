@@ -15,7 +15,7 @@ export default (() => {
     refs.eventsModal.addEventListener('click', onOverlay);
 
     if (document.querySelectorAll('.events__list li').length > 0) {
-      toggleVisuallyHidden();
+      refs.noFavoriteEvents.classList.add('visually-hidden');
     }
   }
 
@@ -25,7 +25,7 @@ export default (() => {
       document.querySelector(`.events__list [data-id="${eventId}"]`).remove();
 
       if (document.querySelectorAll('.events__list li').length == 0) {
-        toggleVisuallyHidden();
+        refs.noFavoriteEvents.classList.remove('visually-hidden');
       }
     }
   }
@@ -44,9 +44,5 @@ export default (() => {
 
   function onOverlay(e) {
     if (e.target === refs.eventsModal) onCloseModal();
-  }
-
-  function toggleVisuallyHidden() {
-    refs.noFavoriteEvents.classList.toggle('visually-hidden');
   }
 })();
