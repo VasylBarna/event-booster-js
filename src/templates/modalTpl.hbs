@@ -1,39 +1,28 @@
-<button class='modal-close'>
-  <svg class='modal-icon-close' fill='none' xmlns='http://www.w3.org/2000/svg'>
-
-    <path
-      d='M1.286 25a1.286 1.286 0 01-.909-2.196L22.804.377a1.286 1.286 0 111.82 1.819L2.195 24.623a1.29 1.29 0 01-.91.377z'
-    ></path>
-    <path
-      d='M23.715 25c-.33 0-.659-.125-.91-.377L.378 2.196A1.286 1.286 0 012.196.376l22.427 22.428A1.286 1.286 0 0123.715 25z'
-    ></path>
-  </svg>
-</button>
 <div class='modal-data-second'>
   <img class='modal-img-second' src='{{images.3.url}}' alt='{{name}}' />
-  <div class="timer-align">
-      <h3 class="timer-title">This event will come in :</h3>
-      <div class="timer" id="timer-1">
-        <div class="field">
-          <span class="value" data-value="days">11</span>
-          <span class="label">Days</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="hours">11</span>
-          <span class="label">Hours</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="mins">11</span>
-          <span class="label">Minutes</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="secs">11</span>
-          <span class="label">Seconds</span>
-        </div>
+  <div class='timer-align'>
+    <h3 class='timer-title'>This event will come in :</h3>
+    <div class='timer' id='timer-1'>
+      <div class='field'>
+        <span class='value' data-value='days'>11</span>
+        <span class='label'>Days</span>
       </div>
+
+      <div class='field'>
+        <span class='value' data-value='hours'>11</span>
+        <span class='label'>Hours</span>
+      </div>
+
+      <div class='field'>
+        <span class='value' data-value='mins'>11</span>
+        <span class='label'>Minutes</span>
+      </div>
+
+      <div class='field'>
+        <span class='value' data-value='secs'>11</span>
+        <span class='label'>Seconds</span>
+      </div>
+    </div>
   </div>
   <div class='modal-hero'>
     <img class='modal-img-first' src='{{images.2.url}}' alt='{{name}}' />
@@ -55,13 +44,8 @@
         >{{dates.start.localTime}}({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.countryCode}})</span>
       </p>
       <h2 class='modal-title'>WHERE</h2>
-      {{!-- <p class='modal-text'>{{_embedded.venues.city.name}}, {{_embedded.venues.country.name}}</p> --}}
-      {{!-- {{#if _embedded.venues.0.name}} --}}
       <p class='modal-text'>{{_embedded.venues.0.city.name}},{{_embedded.venues.0.country.name}}</p>
-      {{!-- {{else}} --}}
       <p class='modal-text'>{{_embedded.venues.0.address.line1}}</p>
-      {{!-- {{/if}} --}}
-      <p class='modal-text'></p>
       <h2 class='modal-title'>WHO</h2>
       <p class='modal-text'>
         {{name}}
@@ -84,6 +68,6 @@
       <button class='modal-btn buy-standart basket'>ADD TO FAVORITE</button>
     </div>
   </div>
-  <a href="{{url}}"><button class="modal-btn-more btn">
-      <span class="style-search">MORE FROM THIS AUTHOR</span></button></a>
-</div> --}}
+  <a href='{{url}}'><button class='modal-btn-more btn'>
+      <span class='style-search'>MORE FROM THIS AUTHOR</span></button></a>
+</div>
