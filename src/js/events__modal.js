@@ -9,9 +9,25 @@ export default (() => {
   function onOpenModal() {
     document.body.classList.add('events-modal-open');
     refs.eventsModal.classList.remove('is-hidden-events');
+    refs.eventsList.addEventListener('click', deleteEventFromFavorite);
 
     window.addEventListener('keydown', onKeydownClose);
     refs.eventsModal.addEventListener('click', onOverlay);
+
+    if (document.querySelectorAll('.events__list li').length > 0) {
+      toggleVisuallyHidden();
+    }
+  }
+
+  function deleteEventFromFavorite(e) {
+    if (e.target.classList.contains('btn-delete-event')) {
+      const eventId = e.target.getAttribute('data-id');
+      document.querySelector(`.events__list [data-id="${eventId}"]`).remove();
+
+      if (document.querySelectorAll('.events__list li').length == 0) {
+        toggleVisuallyHidden();
+      }
+    }
   }
 
   function onCloseModal() {
@@ -28,5 +44,9 @@ export default (() => {
 
   function onOverlay(e) {
     if (e.target === refs.eventsModal) onCloseModal();
+  }
+
+  function toggleVisuallyHidden() {
+    refs.noFavoriteEvents.classList.toggle('visually-hidden');
   }
 })();

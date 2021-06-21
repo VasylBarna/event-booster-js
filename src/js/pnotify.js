@@ -6,7 +6,7 @@ import '@pnotify/core/dist/PNotify.css';
 function pnotifyNotice(message) {
   notice({
     text: `${message}`,
-    delay: 4500,
+    delay: 2000,
     addClass: 'pnotify-notice',
     width: '320px',
   });
@@ -24,7 +24,7 @@ function pnotifyInfo(message) {
 function pnotifySuccess(message) {
   success({
     text: `${message}`,
-    delay: 4500,
+    delay: 2000,
     addClass: 'pnotify-success',
     width: '320px',
   });
@@ -33,7 +33,7 @@ function pnotifySuccess(message) {
 function pnotifyError(message) {
   error({
     text: `${message}`,
-    delay: 4500,
+    delay: 2000,
     addClass: 'pnotify-error',
     width: '320px',
   });

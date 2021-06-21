@@ -9,6 +9,7 @@ const refs = {
   eventsModal: document.querySelector('[data-events-modal]'),
   eventsList: document.querySelector('.events__list'), //Юра список в який дод квитки
   mainModal: document.querySelector('[data-insert]'), // !Юра куда пендерем модалку!
+  noFavoriteEvents: document.querySelector('.no-events'),
   inputRef: document.querySelector('.input'),
   optionRef: document.querySelector('.country-option'),
   selectRef: document.querySelector('.select-country'),

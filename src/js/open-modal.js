@@ -3,14 +3,17 @@ import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
+import { pnotifySuccess } from '../js/pnotify.js';
 
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
+
   function onOpenModal(e) {
     if ((e.target.nodeName !== 'IMG') & 'P') {
       return;
     }
+
     document.body.classList.add('data-modal-open');
     refs.modal.classList.remove('is-hidden');
     window.addEventListener('keydown', onKeydownClose);
@@ -24,30 +27,36 @@ export default (() => {
       .then(el => modalTpl(el))
       .then(el => {
         refs.mainModal.innerHTML = el;
-        const buyTicketsBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
-        buyTicketsBtn.addEventListener('click', onBuyTicketsBtn);
+        const addToFaforitBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
+        addToFaforitBtn.addEventListener('click', onAddToFaforiteBtn);
         // console.log(buyTicketsBtn);
-        function onBuyTicketsBtn() {
-          console.log('work');
-          searchServiceId
-            .fetchApiById(targetId)
-            .then(el => eventsModalTpl(el))
-            .then(el => {
-              refs.eventsList.insertAdjacentHTML('beforeend', el);
-              el.classList.remove('.hover');
-            });
-        }
       });
+
+    function onAddToFaforiteBtn() {
+      // console.log('work');
+      searchServiceId
+        .fetchApiById(targetId)
+        .then(el => eventsModalTpl(el))
+        .then(el => {
+          refs.eventsList.insertAdjacentHTML('beforeend', el);
+          // el.classList.remove('.hover');
+          pnotifySuccess('Event added to favorite');
+        });
+    }
   }
+
   function onCloseModal() {
     document.body.classList.remove('data-modal-open');
     refs.modal.classList.add('is-hidden');
     window.removeEventListener('keydown', onKeydownClose);
     refs.modal.removeEventListener('click', onOverlay);
+    refs.mainModal.innerHTML = '';
   }
+
   function onKeydownClose(e) {
     if (e.code === 'Escape') onCloseModal();
   }
+
   function onOverlay(e) {
     if (e.target === refs.modal) onCloseModal();
   }
