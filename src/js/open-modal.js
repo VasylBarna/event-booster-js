@@ -6,26 +6,34 @@ export default (() => {
   refs.closeModalBtn.addEventListener('click', onCloseModal);
 
   function onOpenModal(e) {
-    if ((e.target.nodeName !== 'IMG') & 'P') {
+    e.preventDefault();
+    if (!e.target.classList.contains('event-card')) {
       return;
     }
     console.log(e.target);
     document.body.classList.add('data-modal-open');
-    refs.modal.classList.remove('is-hidden');
+    refs.backdrop.classList.remove('is-hidden');
     window.addEventListener('keydown', onKeydownClose);
-    refs.modal.addEventListener('click', onOverlay);
+    refs.backdrop.addEventListener('click', onOverlay);
   }
   function onCloseModal() {
     document.body.classList.remove('data-modal-open');
-    refs.modal.classList.add('is-hidden');
+    refs.backdrop.classList.add('is-hidden');
     window.removeEventListener('keydown', onKeydownClose);
-    refs.modal.removeEventListener('click', onOverlay);
+    refs.backdrop.removeEventListener('click', onOverlay);
+      setTimeout(() => {
+      refs.modal.innerHTML = '';
+    }, 300);
   }
   function onKeydownClose(e) {
-    if (e.code === 'Escape') onCloseModal();
+    if (e.code === 'Escape') {
+      onCloseModal();
+    }
   }
   function onOverlay(e) {
-    if (e.target === refs.modal) onCloseModal();
+    if (e.target === refs.backdrop) {
+      onCloseModal();
+    }
   }
 })();
 const searchServiceId = new SearchService();
@@ -36,9 +44,9 @@ const searchServiceId = new SearchService();
 refs.openModalBtn.addEventListener('click', onOpenModal);
 
 function onOpenModal(e) {
-  if ((e.target.nodeName !== 'IMG') & 'P') {
-    return;
-  }
+  // if ((e.target.nodeName !== 'IMG') & 'P') {
+  //   return;
+  // }
 
   const id = e.target.dataset.id;
   console.log('id', id);
@@ -54,5 +62,5 @@ function onOpenModal(e) {
   // refs.mainModal.innerHTML = eventsModalTpl(value);
 
   document.body.classList.add('data-modal-open');
-  refs.modal.classList.remove('is-hidden');
+  refs.backdrop.classList.remove('is-hidden');
 }
