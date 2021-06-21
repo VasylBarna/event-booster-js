@@ -5,6 +5,6 @@ import './js/footer';
 import './js/pagination.js';
 import './js/input.js';
 import './js/loader.js';
-// import './js/timer';
+import './js/timer';
 
 const favEventsId = [];

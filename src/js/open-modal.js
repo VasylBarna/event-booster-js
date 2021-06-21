@@ -3,9 +3,13 @@ import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import SearchService from './api_service';
 import eventsModalTpl from '../templates/events__modal.hbs';
+<<<<<<< HEAD
+import CountdownTimer from '../js/timer';
+=======
 import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
 import { favEventsId } from './favEventsId';
 import { updateFavoriteCounter } from './favorite';
+>>>>>>> dev
 
 export default (() => {
   refs.openModalBtn.addEventListener('click', onOpenModal);
@@ -26,7 +30,28 @@ export default (() => {
 
     searchServiceId
       .fetchApiById(targetId)
-      .then(el => modalTpl(el))
+      .then(el => {
+        // modalTpl(el);
+        const { start } = el.dates;
+        const { localDate, localTime } = start;
+        const eventTime = {
+          date: localDate,
+          time: localTime,
+        }
+        const date = eventTime;
+        const str =
+        Object.values(date)[0].split("-").join(" ") + " " + Object.values(date)[1];
+        console.log(str);
+
+        const newDate = new CountdownTimer({
+          selector: "#timer-2",
+          targetDate: new Date(str),
+        });
+        newDate.updateDate();
+        // newDate.stopTimer();
+
+        return modalTpl(el);
+      })
       .then(el => {
         refs.mainModal.innerHTML = el;
         const addToFaforitBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
