@@ -50,7 +50,7 @@ export default (() => {
 
     function onAddToFaforiteBtn() {
       if (favEventsId.includes(targetId)) {
-        pnotifyError('Event alreary in favorites');
+        pnotifyError('Event already in favorites');
       } else {
         searchServiceId
           .fetchApiById(targetId)
