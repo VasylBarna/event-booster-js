@@ -38,9 +38,10 @@ img {
   width: 272px;
   max-width: 100%;
   position: absolute;
-  top: 50%;
+  display: inline-table;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   background-color: $modal-bg;
   border-radius: 150px 0px;
   background-blend-mode: color;
@@ -157,7 +158,7 @@ img {
   height: 102px;
   object-fit: cover;
   background: #c4c4c4;
-  border-radius: 50px;
+  border-radius: 100px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 36px;
@@ -244,8 +245,13 @@ img {
     margin-bottom: 31px;
   }
 }
-.buy-basket {
-  display: block;
+.basket {
+  &:hover,
+  &:active {
+    letter-spacing: 4px;
+    background-color: yellowgreen;
+    transition: color 250ms $time-distribution-function;
+  }
 }
 
 .modal-btn-more {
