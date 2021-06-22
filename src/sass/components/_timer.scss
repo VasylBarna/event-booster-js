@@ -1,11 +1,15 @@
 .timer-align {
-  @media screen and (min-width: 768px) {
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
     padding-bottom: 7px;
   }
   @media screen and (min-width: 1280px){
     padding-left: 19px;
+    justify-content: flex-start;
   }
 }
 
@@ -14,7 +18,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: Montserrat, sans-serif;
-  font-size: 20px;
+  font-size: 10px;
   font-style: normal;
   font-weight: 600;
   line-height: 1.2;
@@ -45,9 +49,15 @@
 .field {
   display: flex;
   flex-direction: column;
+  width: 32px;
+
   // margin-right: 20px;
   @media screen and (min-width: 768px) {
     margin-left: 5px;
+    width: 45px;
+  }
+  @media screen and (min-width: 1280px){
+    width: 80px;
   }
 }
 
@@ -61,8 +71,12 @@ text-align: center;
 
 line-height: 1.15;
 padding: 5px;
-font-size: 20px;
+font-size: 11px;
 font-weight: 600;
+
+@media screen and (min-width: 768px) {
+  font-size: 20px;
+}
 
 @media screen and (min-width: 1280px){
   font-size: 40px;
@@ -71,11 +85,15 @@ font-weight: 600;
 }
 
 .field .label {
+  padding-top: 3px;
+  font-size: 4px;
   padding-right: 5px;
   // padding-top: 10px;
-  padding-top: 5px;
-  font-size: 10px;
   color: gray;
   text-transform: uppercase;
   text-align: center;
+  @media screen and (min-width: 768px){
+    padding-top: 5px;
+    font-size: 9px;
+  }
 }
