@@ -15,7 +15,7 @@ function pnotifyNotice(message) {
 function pnotifyInfo(message) {
   info({
     text: `${message}`,
-    delay: 4500,
+    delay: 2000,
     addClass: 'pnotify-info',
     width: '320px',
   });

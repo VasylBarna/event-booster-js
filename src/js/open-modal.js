@@ -8,7 +8,7 @@ import { favEventsId } from './favEventsId';
 import { updateFavoriteCounter } from './favorite';
 import { fetchData } from './input.js';
 
-export default (() => {
+
   const searchServiceId = new SearchService();
   const timer = new CountdownTimer();
 
@@ -24,7 +24,6 @@ export default (() => {
     window.addEventListener('keydown', onKeydownClose);
     refs.modal.addEventListener('click', onOverlay);
 
-    const searchServiceId = new SearchService();
     const targetId = e.target.dataset.id;
     const author = e.target.dataset.author;
 
@@ -99,4 +98,4 @@ export default (() => {
     const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
     timer.updateDate(str);
   }
-})();
+

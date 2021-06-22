@@ -31,36 +31,3 @@ function onBackdropClick(e) {
     closeModalFooter();
   }
 }
-
-// закрытие модалки по клику за ее пределами
-
-// 1 вариант
-
-// body.addEventListener('click', e => {
-//   //   if (evt.target.className === 'footer-modal') {
-//   //     return;
-//   //   }
-//   if (e.code === 'Escape') {
-//     onCloseModal();
-//   }
-//   if (e.target === refs.modal) {
-//     onCloseModal();
-//   }
-//   refs.modalStudents.classList.remove('.modal-open');
-// });
-
-// 2 вариант
-
-//     modalStudents.addEventListener('click', onBackdropFooter);
-
-//     function onBackdropFooter(e) {
-//     if (e.target !== modalStudents) {
-//         onCloseModal();
-//     }
-// }
-
-// function onCloseModal() {
-//         document.body.classList.remove('modal-open');
-//         modalStudents.classList.add('is-hidden-footer');
-//         modalStudents.removeEventListener('click', onBackdropFooter);
-//       }
