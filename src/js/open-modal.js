@@ -1,4 +1,3 @@
-// import card from '../templates/eventCardsTpl.hbs';
 import { refs } from './refs';
 import modalTpl from '../templates/modalTpl.hbs';
 import eventsModalTpl from '../templates/events__modal.hbs';
@@ -32,20 +31,17 @@ export default (() => {
     searchServiceId
       .fetchApiById(targetId)
       .then(el => {
-        // modalTpl(el);
         timerCreate(el);
 
         return modalTpl(el);
       })
       .then(el => {
         refs.mainModal.innerHTML = el;
-        const addToFaforitBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
+        const addToFaforitBtn = document.querySelector('.basket');
         addToFaforitBtn.addEventListener('click', onAddToFaforiteBtn);
 
         const moreFromThisAuthor = document.querySelector('[data-more-author]');
         moreFromThisAuthor.addEventListener('click', onClickMoreFromAuthor);
-
-        // console.log(buyTicketsBtn);
       });
 
     function onAddToFaforiteBtn() {
@@ -57,7 +53,6 @@ export default (() => {
           .then(el => eventsModalTpl(el))
           .then(el => {
             refs.eventsList.insertAdjacentHTML('beforeend', el);
-            // el.classList.remove('.hover');
             favEventsId.push(targetId);
             updateFavoriteCounter();
             pnotifySuccess('Event added to favorite');
@@ -104,7 +99,5 @@ export default (() => {
     const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
     console.log(str);
     timer.updateDate(str);
-    // const newDate = stingToArg(str);
-    // return newDate;
   }
 })();
