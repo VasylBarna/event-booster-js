@@ -102,9 +102,6 @@ export default (() => {
     };
     const date = eventTime;
     const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
-    console.log(str);
     timer.updateDate(str);
-    // const newDate = stingToArg(str);
-    // return newDate;
   }
 })();
