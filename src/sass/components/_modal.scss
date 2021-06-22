@@ -85,7 +85,11 @@ img {
   }
 }
 
-.modal-title {
+.modal-info-title,
+.modal-when-title,
+.modal-where-title,
+.modal-who-title,
+.modal-prices-title {
   margin-bottom: 5px;
   font-family: $primary-font;
   font-size: 20px;
@@ -101,7 +105,13 @@ img {
     line-height: 1.21;
   }
 }
-.modal-text {
+
+.modal-info-description,
+.modal-when-date,
+.modal-where-location,
+.modal-where-address,
+.modal-who-name,
+.modal-prices-description {
   max-height: 70px;
   overflow: auto;
   margin-bottom: 10px;
@@ -123,7 +133,16 @@ img {
   }
 }
 
-.modal-text-first {
+.modal-prices-title {
+  margin-bottom: 10px;
+}
+
+.modal-prices-description {
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.modal-when-location {
   margin-top: 3px;
   display: block;
   @media screen and (min-width: 1280px) {
@@ -311,7 +330,7 @@ img {
   vertical-align: bottom;
   &:hover {
     transform: scale(2);
-    box-shadow: 0 10px 5px -5px $bg-btn-color;
+    // box-shadow: 0 10px 5px -5px $bg-btn-color;
     transition: opacity 250ms $time-distribution-function;
   }
 }
