@@ -140,7 +140,8 @@
     right: 90px;
     width: 80px;
     height: 80px;
-    transition: transform 250ms $time-distribution-function, background-color 250ms $time-distribution-function;
+    transition: transform 250ms $time-distribution-function,
+      background-color 250ms $time-distribution-function, fill 250ms $time-distribution-function;
     &:hover,
     &:focus {
       transform: scale(1.1);
@@ -292,12 +293,9 @@
   position: absolute;
   z-index: 18;
 
-  
   display: flex;
   justify-content: center;
   align-items: center;
- 
-  
 
   border-radius: 50%;
 
@@ -307,26 +305,24 @@
   width: 15px;
   height: 15px;
 
-@media screen and (min-width: 768px) {
-  top: 50px;
-  right: 50px;
-background-color: yellowgreen;
-  width: 20px;
-  height: 20px;
-}
+  @media screen and (min-width: 768px) {
+    top: 50px;
+    right: 50px;
+    background-color: yellowgreen;
+    width: 20px;
+    height: 20px;
+  }
 
   @media screen and (min-width: 1280px) {
-  
-  top: 70px;
-  right: 70px;
+    top: 70px;
+    right: 70px;
 
-  width: 25px;
-  height: 25px;
-}
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .basket-value {
   display: block;
   color: #ffffff;
-  
 }
