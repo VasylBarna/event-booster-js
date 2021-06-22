@@ -19,6 +19,10 @@ const refs = {
   formRef: document.querySelector('form'),
   buttonRef: document.querySelector('button'),
   favoriteEventsCounter: document.querySelector('#valuebask'),
+  modalStudentsLink: document.querySelector('.footer-students'),
+  closeModalStudents: document.querySelector('.modal-close-footer'),
+  modalStudents: document.querySelector('.footer-modal'),
+  backdropFooterModal: document.querySelector('.backdrop-footer'),
 };
 
 export { refs };
