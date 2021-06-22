@@ -25,18 +25,15 @@ export default class CountdownTimer {
         clearInterval(this.intervalId);
         return;
       }
-      this.getRefs().days.textContent = Math.floor(
-        time / (1000 * 60 * 60 * 24)
-      );
-      this.getRefs().hours.textContent = Math.floor(
-        (time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      this.getRefs().mins.textContent = Math.floor(
-        (time % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      this.getRefs().secs.textContent = Math.floor((time % (1000 * 60)) / 1000);
+      this.getRefs().days.textContent = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+      this.getRefs().hours.textContent = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      this.getRefs().mins.textContent = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+      this.getRefs().secs.textContent = this.pad(Math.floor((time % (1000 * 60)) / 1000));
     }, 300);
   }
+  pad(value) {
+      return String(value).padStart(2, '0');
+    }
   // stopTimer() { //Не знаю пока, как перезаписывать таймер
   //   clearInterval(this.intervalId);
   // }
