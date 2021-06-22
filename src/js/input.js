@@ -67,3 +67,5 @@ function renderCountries() {
   const markupCountries = templateMany(isoCountries);
   refs.optionRef.insertAdjacentHTML('afterend', markupCountries);
 }
+
+export { fetchData };

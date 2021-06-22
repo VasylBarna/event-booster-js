@@ -7,6 +7,7 @@ import CountdownTimer from '../js/timer';
 import { pnotifySuccess, pnotifyError } from '../js/pnotify.js';
 import { favEventsId } from './favEventsId';
 import { updateFavoriteCounter } from './favorite';
+import { fetchData } from './input.js';
 
 export default (() => {
   const searchServiceId = new SearchService();
@@ -26,21 +27,26 @@ export default (() => {
 
     const searchServiceId = new SearchService();
     const targetId = e.target.dataset.id;
+    const author = e.target.dataset.author;
 
     searchServiceId
       .fetchApiById(targetId)
       .then(el => {
         // modalTpl(el);
         timerCreate(el);
+
         return modalTpl(el);
       })
       .then(el => {
         refs.mainModal.innerHTML = el;
         const addToFaforitBtn = document.querySelector('.basket'); //! не добавляти в файл refs ні в якому разі
         addToFaforitBtn.addEventListener('click', onAddToFaforiteBtn);
+
+        const moreFromThisAuthor = document.querySelector('[data-more-author]');
+        moreFromThisAuthor.addEventListener('click', onClickMoreFromAuthor);
+
         // console.log(buyTicketsBtn);
       });
-
 
     function onAddToFaforiteBtn() {
       if (favEventsId.includes(targetId)) {
@@ -58,9 +64,15 @@ export default (() => {
           });
       }
     }
+
+    function onClickMoreFromAuthor(e) {
+      refs.inputRef.value = author;
+      fetchData(e);
+      onCloseModal();
+    }
   }
 
-function onCloseModal() {
+  function onCloseModal() {
     document.body.classList.remove('data-modal-open');
     refs.modal.classList.add('is-hidden');
     window.removeEventListener('keydown', onKeydownClose);
