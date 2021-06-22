@@ -10,6 +10,7 @@ import { updateFavoriteCounter } from './favorite';
 
 export default (() => {
   const searchServiceId = new SearchService();
+  const timer = new CountdownTimer();
 
   refs.openModalBtn.addEventListener('click', onOpenModal);
   refs.closeModalBtn.addEventListener('click', onCloseModal);
@@ -30,23 +31,7 @@ export default (() => {
       .fetchApiById(targetId)
       .then(el => {
         // modalTpl(el);
-        const { start } = el.dates;
-        const { localDate, localTime } = start;
-        const eventTime = {
-          date: localDate,
-          time: localTime,
-        };
-        const date = eventTime;
-        const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
-        console.log(str);
-
-        const newDate = new CountdownTimer({
-          selector: '#timer-2',
-          targetDate: new Date(str),
-        });
-        newDate.updateDate();
-        // newDate.stopTimer();
-
+        timerCreate(el);
         return modalTpl(el);
       })
       .then(el => {
@@ -55,6 +40,7 @@ export default (() => {
         addToFaforitBtn.addEventListener('click', onAddToFaforiteBtn);
         // console.log(buyTicketsBtn);
       });
+
 
     function onAddToFaforiteBtn() {
       if (favEventsId.includes(targetId)) {
@@ -74,12 +60,13 @@ export default (() => {
     }
   }
 
-  function onCloseModal() {
+function onCloseModal() {
     document.body.classList.remove('data-modal-open');
     refs.modal.classList.add('is-hidden');
     window.removeEventListener('keydown', onKeydownClose);
     refs.modal.removeEventListener('click', onOverlay);
     refs.mainModal.innerHTML = '';
+    timer.stopTimer();
   }
 
   function onKeydownClose(e) {
@@ -92,5 +79,20 @@ export default (() => {
     if (e.target === refs.modal) {
       onCloseModal();
     }
+  }
+
+  function timerCreate(el) {
+    const { start } = el.dates;
+    const { localDate, localTime } = start;
+    const eventTime = {
+      date: localDate,
+      time: localTime,
+    };
+    const date = eventTime;
+    const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
+    console.log(str);
+    timer.updateDate(str);
+    // const newDate = stingToArg(str);
+    // return newDate;
   }
 })();
