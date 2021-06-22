@@ -329,13 +329,18 @@ img {
   height: 25px;
   fill: currentColor;
   transition: color 250ms $time-distribution-function;
+  &:active,
+  &:focus {
+    transition:  250ms $time-distribution-function;
+    transform: rotate(360deg);
+
+  }
 }
 .icon-ticket {
   margin-right: 13px;
   vertical-align: bottom;
   &:hover {
     transform: scale(2);
-    // box-shadow: 0 10px 5px -5px $bg-btn-color;
     transition: opacity 250ms $time-distribution-function;
   }
 }
