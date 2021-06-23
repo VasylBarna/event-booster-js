@@ -72,6 +72,7 @@ function onCloseModal() {
   window.removeEventListener('keydown', onKeydownClose);
   refs.modal.removeEventListener('click', onOverlay);
   timer.stopTimer();
+  clearModal();
 }
 
 function onKeydownClose(e) {
@@ -96,4 +97,7 @@ function timerCreate(el) {
   const date = eventTime;
   const str = Object.values(date)[0].split('-').join(' ') + ' ' + Object.values(date)[1];
   timer.updateDate(str);
+}
+function clearModal() {
+  refs.mainModal.innerHTML = '';
 }
