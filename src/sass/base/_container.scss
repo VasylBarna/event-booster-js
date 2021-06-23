@@ -4,6 +4,10 @@
   padding-right: 25px;
   padding-left: 25px;
 
+  @media screen and (max-width: 350px) {
+    width: auto;
+  }
+
   @media screen and (max-width: 767px) {
     width: 320px;
   }

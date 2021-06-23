@@ -1,5 +1,3 @@
-// import SearchService from './api_service';
-// import eventsModalTpl from '../templates/events__modal.hbs';
 import { refs } from './refs';
 import { deleteEventFromFavorite } from './favorite';
 
