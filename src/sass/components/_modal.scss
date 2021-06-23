@@ -157,6 +157,7 @@ img {
   object-fit: cover;
   background: #c4c4c4;
   border-radius: 100px;
+  transition: opacity 250ms $time-distribution-function;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 36px;
@@ -172,7 +173,6 @@ img {
     transform: scale(1.1);
     border-radius: 50px 0px;
     box-shadow: 0 10px 5px -5px $bg-btn-color;
-    transition: opacity 250ms $time-distribution-function;
   }
 }
 
@@ -202,14 +202,14 @@ img {
   color: $secondary-color;
   border-radius: 5px;
   border: none;
+  transition: color 250ms $time-distribution-function;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   &:hover,
   &:active {
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     background-color: $accent-color;
-    transition: color 250ms $time-distribution-function;
   }
 }
 .modal-btn:after,
@@ -221,7 +221,7 @@ img {
   display: block;
   margin: 0 auto;
   position: relative;
-  transition: all 280ms ease-in-out;
+  transition: all 250ms $time-distribution-function;
   width: 0;
 }
 
@@ -229,7 +229,7 @@ img {
 .modal-btn:hover:before {
   backface-visibility: hidden;
   border-color: #fff;
-  transition: width 350ms ease-in-out;
+  transition: width 250ms $time-distribution-function;
   width: 100%;
 }
 
@@ -247,9 +247,9 @@ img {
 .basket {
   &:hover,
   &:active {
-    letter-spacing: 4px;
-    background-color: yellowgreen;
-    transition: color 250ms $time-distribution-function;
+    letter-spacing: 3px;
+    background-color: rgba(209, 178, 1, 0.734);
+    transition: 250ms $time-distribution-function;
   }
 }
 
@@ -272,6 +272,7 @@ img {
   border-radius: 5px;
   cursor: pointer;
   background-color: transparent;
+  transition: 250ms $time-distribution-function;
   text-transform: uppercase;
   background: linear-gradient(0.25turn, #b6d9fa, #ffffff, #f5c0ed);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -328,19 +329,17 @@ img {
   width: 25px;
   height: 25px;
   fill: currentColor;
-  transition: color 250ms $time-distribution-function;
+  transition: 250ms $time-distribution-function;
   &:active,
   &:focus {
-    transition:  250ms $time-distribution-function;
     transform: rotate(360deg);
-
   }
 }
 .icon-ticket {
   margin-right: 13px;
   vertical-align: bottom;
+  transition: scale 250ms $time-distribution-function;
   &:hover {
     transform: scale(2);
-    transition: opacity 250ms $time-distribution-function;
   }
 }
