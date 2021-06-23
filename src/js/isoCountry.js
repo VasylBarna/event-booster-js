@@ -1,6 +1,5 @@
 const isoCountries = {
   '': 'All',
-  US: 'United States Of America',
   AD: 'Andorra',
   AI: 'Anguilla',
   AR: 'Argentina',
@@ -81,6 +80,7 @@ const isoCountries = {
   TR: 'Turkey',
   UA: 'Ukraine',
   AE: 'United Arab Emirates',
+  US: 'United States Of America',
   UY: 'Uruguay',
   VE: 'Venezuela',
 };
