@@ -6,3 +6,4 @@ import './js/pagination.js';
 import './js/input.js';
 import './js/loader.js';
 import './js/timer';
+import './js/buttonToTop';
