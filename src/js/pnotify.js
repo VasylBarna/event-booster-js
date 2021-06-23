@@ -1,6 +1,5 @@
 import '@pnotify/core/dist/BrightTheme.css';
 import { notice, info, success, error } from '@pnotify/core';
-import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/core/dist/PNotify.css';
 
 function pnotifyNotice(message) {
