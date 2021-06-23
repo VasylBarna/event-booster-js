@@ -1,15 +1,12 @@
-//import eventCardsTpl from '../templates/eventCardsTpl.hbs';
 import templateMany from '../templates/templateCountry.hbs';
 import isoCountries from '../js/isoCountry.js';
 import { refs } from '../js/refs';
 import SearchService from './api_service';
-//import debounce from 'lodash.debounce';
 import { pnotifyError } from '../js/pnotify.js';
 import paginationCreate from '../js/pagination.js';
 import loader from './loader.js';
 const searchService = new SearchService();
 refs.formRef.addEventListener('submit', fetchData);
-//refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
 refs.selectRef.addEventListener('change', fetchCountry);
 
 function fetchData(e) {
@@ -17,26 +14,20 @@ function fetchData(e) {
   searchService.searchQuery = refs.inputRef.value.trim();
 
   loader();
-
-  //refs.buttonRef.addEventListener('onclick', fetchData);
-  //refs.inputRef.addEventListener('input', debounce(fetchData, 1500));
-  //refs.selectRef.addEventListener('change', debounce(fetchCountry, 1500));
-
-  //function fetchData() {
-  //console.log("fetchData");
-  //searchService.searchQuery = '';
   searchService.fetchApiEvent().then(renderData);
 }
 
 function renderData(dataRender) {
-  // console.log(dataRender);
   if (!dataRender) {
     pnotifyError(`Sorry, but we haven't found any events for your request`);
     refs.dataContainer.innerHTML = '';
     refs.paginationContainer.innerHTML = `<h2 class="pagination-error">Sorry, but we haven't found any events for your request</h2>`;
-    // $('#data-container').html('');
+    refs.footer.style.position = 'fixed';
+    refs.footer.style.bottom = 0;
   } else {
     refs.paginationContainer.innerHTML = '';
+    refs.footer.style.position = '';
+    refs.footer.style.bottom = '';
     paginationCreate(dataRender);
   }
 
@@ -46,8 +37,6 @@ function renderData(dataRender) {
     behavior: 'smooth',
     block: 'start',
   });
-  //var markup = eventCardsTpl(dataRender);
-  //$('#data-container').html(markup);
 }
 
 function fetchCountry(e) {
