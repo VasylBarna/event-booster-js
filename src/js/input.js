@@ -22,8 +22,12 @@ function renderData(dataRender) {
     pnotifyError(`Sorry, but we haven't found any events for your request`);
     refs.dataContainer.innerHTML = '';
     refs.paginationContainer.innerHTML = `<h2 class="pagination-error">Sorry, but we haven't found any events for your request</h2>`;
+    refs.footer.style.position = 'fixed';
+    refs.footer.style.bottom = 0;
   } else {
     refs.paginationContainer.innerHTML = '';
+    refs.footer.style.position = '';
+    refs.footer.style.bottom = '';
     paginationCreate(dataRender);
   }
 

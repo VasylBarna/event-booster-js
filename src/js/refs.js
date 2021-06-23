@@ -23,6 +23,7 @@ const refs = {
   closeModalStudents: document.querySelector('.modal-close-footer'),
   modalStudents: document.querySelector('.footer-modal'),
   backdropFooterModal: document.querySelector('.backdrop-footer'),
+  footer: document.querySelector('.footer'),
 };
 
 export { refs };
