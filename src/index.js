@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import './js/open-modal';
+import './js/openModal';
 import './js/events__modal';
 import './js/footer';
 import './js/pagination.js';
