@@ -33,15 +33,14 @@ body.events-modal-open {
 // ========= modal==========
 
 .events__modal {
-  // width: 1322px;
-  width: 80%;
+  max-width: 70%;
   position: absolute;
   margin-top: 100px;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   padding: 30px;
-  opacity: 1;
+  // opacity: 1;
   background-color: $modal-bg;
-  border-radius: 4px;
+  border-radius: 25px;
 
   transform: scale(1);
   transition: transform 250ms $time-distribution-function, opacity 250ms $time-distribution-function;
@@ -49,7 +48,8 @@ body.events-modal-open {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  background-color: black;
+  background-color: rgba(36, 36, 36, 0.5);
+  backdrop-filter: blur(20px);
 }
 
 .no-events {
@@ -64,7 +64,7 @@ body.events-modal-open {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: transparent;
 }
 
 // .event-card {
@@ -107,12 +107,14 @@ body.events-modal-open {
 .btn-modal-close,
 .btn-delete-event {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
   width: 30px;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  background-color: rgb(51, 51, 51);
 
   &::before,
   &::after {
@@ -123,7 +125,7 @@ body.events-modal-open {
     height: 14px;
     width: 1px;
 
-    background: #000;
+    background: $accent-color;
     transition: 250ms $time-distribution-function;
   }
 
