@@ -9,6 +9,15 @@ const searchService = new SearchService();
 refs.formRef.addEventListener('submit', fetchData);
 refs.selectRef.addEventListener('change', fetchCountry);
 
+searchService.fetchApiEvent().then(data => {
+  if (!data) {
+    pnotifyError(`Sorry, but we haven't found any events for your request`);
+  }
+  paginationCreate(data);
+  loader();
+  refs.footer.style.position = 'relative';
+});
+
 function fetchData(e) {
   e.preventDefault();
   searchService.searchQuery = refs.inputRef.value.trim();
@@ -26,13 +35,12 @@ function renderData(dataRender) {
     refs.footer.style.bottom = 0;
   } else {
     refs.paginationContainer.innerHTML = '';
-    refs.footer.style.position = '';
-    refs.footer.style.bottom = '';
+    refs.footer.style.position = 'relative';
+    refs.footer.style.removeProperty('bottom');
     paginationCreate(dataRender);
   }
 
-  document.body.classList.toggle('loader-open');
-  refs.loader.classList.toggle('is-hidden');
+  loader();
   refs.cardsList.scrollIntoView({
     behavior: 'smooth',
     block: 'start',
@@ -43,8 +51,7 @@ function fetchCountry(e) {
   searchService.country = Object.entries(isoCountries)[e.target.selectedIndex - 1][0];
   searchService.fetchApiEvent().then(renderData);
 
-  document.body.classList.toggle('loader-open');
-  refs.loader.classList.toggle('is-hidden');
+  loader();
   refs.cardsList.scrollIntoView({
     behavior: 'smooth',
     block: 'start',
