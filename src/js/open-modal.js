@@ -16,7 +16,7 @@ import { fetchData } from './input.js';
   refs.closeModalBtn.addEventListener('click', onCloseModal);
 
   function onOpenModal(e) {
-    e.preventDefault();
+    // e.preventDefault();  Закоментировал Андрей , чтобы работала геолокация !
     if (e.target.nodeName !== 'IMG') return;
 
     document.body.classList.add('data-modal-open');
