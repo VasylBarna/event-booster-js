@@ -141,7 +141,8 @@ body.events-modal-open {
   &:hover::after,
   &:focus::before,
   &:focus::after {
-    opacity: 0.3;
+    // opacity: 0.3;
+    background: white;
   }
 }
 
