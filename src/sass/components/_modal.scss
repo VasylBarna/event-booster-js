@@ -2,13 +2,6 @@ body.data-modal-open {
   overflow: hidden;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -186,7 +179,6 @@ img {
   @media screen and (min-width: 1280px) {
     width: 360px;
     height: 641px;
-    display: block;
   }
 }
 
@@ -248,7 +240,7 @@ img {
   &:hover,
   &:active {
     letter-spacing: 3px;
-    background-color: rgba(209, 178, 1, 0.734);
+    background-color: $btn-add-favorites;
     transition: 250ms $time-distribution-function;
   }
 }
