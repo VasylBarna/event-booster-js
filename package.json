@@ -6,14 +6,14 @@
   "homepage": "https://VasylBarna.github.io/event-booster-js.git",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url event-booster-js.git"
+    "build": "parcel build src/*.html --public-url event-booster-js/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VasylBarna/event-booster-js.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Vasyl Barna <vasylbarna@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VasylBarna/event-booster-js.git/issues"
