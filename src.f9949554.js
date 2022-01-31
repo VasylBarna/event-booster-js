@@ -77,4 +77,4 @@ let e,o=0;const t=document.querySelector(".buttonToTop");function n(){skrolled=w
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/openModal"),require("./js/events__modal"),require("./js/footer"),require("./js/pagination.js"),require("./js/input.js"),require("./js/loader.js"),require("./js/timer"),require("./js/buttonToTop");
 },{"./sass/main.scss":"clu1","./js/openModal":"ItER","./js/events__modal":"XVNL","./js/footer":"b5Ik","./js/pagination.js":"o8lo","./js/input.js":"vYOj","./js/loader.js":"vQE2","./js/timer":"yCUT","./js/buttonToTop":"EVNR"}]},{},["Focm"], null)
-//# sourceMappingURL=event-booster-js.git/src.33511c6b.js.map
+//# sourceMappingURL=event-booster-js/src.f9949554.js.map
