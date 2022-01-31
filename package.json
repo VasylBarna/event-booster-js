@@ -1,22 +1,22 @@
 {
-  "name": "js-team-project",
+  "name": "event-booster-js.git",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://kylory.github.io/js-team-project",
+  "homepage": "https://VasylBarna.github.io/event-booster-js.git",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-team-project/"
+    "build": "parcel build src/*.html --public-url event-booster-js.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/VasylBarna/event-booster-js.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/VasylBarna/event-booster-js.git/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
